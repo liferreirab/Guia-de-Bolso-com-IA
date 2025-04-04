@@ -57,7 +57,9 @@ const Navbar = () => {
             </a>
             <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white rounded-lg 
               shadow-[0_0_10px_rgba(255,60,142,0.3)] transition-all hover:shadow-[0_0_15px_rgba(255,60,142,0.5)]">
-              Comprar Agora
+              <a href="https://pay.hotmart.com/M87692618I?bid=1743367203678" className="w-full h-full">
+                Comprar Agora
+              </a>
             </Button>
           </div>
           
@@ -89,7 +91,9 @@ const Navbar = () => {
               Benefícios
             </a>
             <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white w-full">
-              Comprar Agora
+              <a href="https://pay.hotmart.com/M87692618I?bid=1743367203678" className="w-full h-full">
+                Comprar Agora
+              </a>
             </Button>
           </div>
         </div>

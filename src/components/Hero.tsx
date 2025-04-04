@@ -3,6 +3,13 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const scrollToBenefits = () => {
+    const benefitsSection = document.getElementById('benefits');
+    if (benefitsSection) {
+      benefitsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Background com efeito de gradiente */}
@@ -33,11 +40,17 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white py-6 px-8 rounded-xl 
               shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]">
-              Quero Meu Guia Agora!
+              <a href="https://pay.hotmart.com/M87692618I?bid=1743367203678" className="w-full h-full">
+                Quero Meu Guia Agora!
+              </a>
             </Button>
-            <Button variant="outline" className="border-neon-blue text-neon-blue py-6 px-8 rounded-xl 
+            <Button 
+              variant="outline" 
+              className="border-neon-blue text-neon-blue py-6 px-8 rounded-xl 
               hover:bg-neon-blue/20 shadow-[0_0_10px_rgba(0,153,255,0.3)] transition-all 
-              hover:shadow-[0_0_20px_rgba(0,153,255,0.6)]">
+              hover:shadow-[0_0_20px_rgba(0,153,255,0.6)]"
+              onClick={scrollToBenefits}
+            >
               Saiba Mais
             </Button>
           </div>
@@ -55,7 +68,7 @@ const Hero = () => {
             
           {/* Nota manuscrita */}
           <div className="absolute bottom-4 left-4 transform rotate-[-5deg] bg-white/90 px-3 py-1 rounded shadow-md z-20">
-            <p className="text-neon-black font-handwriting text-sm">essa imagem foi 100% feita por IA!</p>
+            <p className="text-neon-black font-handwriting text-md md:text-lg">essa imagem foi 100% feita por IA!</p>
           </div>
         </div>
       </div>

@@ -51,8 +51,10 @@ const CTA = () => {
               <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white py-6 rounded-lg 
                 shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]
                 flex items-center justify-center gap-2 text-lg">
-                <span>Quero Meu Guia Agora</span>
-                <ArrowRight className="w-5 h-5" />
+                <a href="https://pay.hotmart.com/M87692618I?bid=1743367203678" className="w-full h-full">
+                  <span>Quero Meu Guia Agora</span>
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
               
               <p className="text-gray-400 text-sm text-center mt-4">
