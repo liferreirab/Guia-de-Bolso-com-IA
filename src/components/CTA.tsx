@@ -31,8 +31,8 @@ const CTA = () => {
             <div>
               <h3 className="text-neon-pink font-bold text-xl mb-4">O Que Você Recebe:</h3>
               <ul className="space-y-3">
-                {['Guia completo em PDF', 'Acesso a todas atualizações futuras', 'Modelos de prompts prontos',
-                  'Tutoriais passo a passo', 'Calendário editorial', 'Suporte por email'].map((item, i) => (
+                {['Aulas 100% online', 'Acesso de qualquer lugar do mundo', 'Atualizações gratuitas durante seu acesso', 
+                  'Tutoriais passo a passo', 'Modelos de prompts prontos', 'Suporte por email'].map((item, i) => (
                   <li key={i} className="flex items-start">
                     <Check className="w-5 h-5 text-neon-blue mr-2 flex-shrink-0" />
                     <span className="text-gray-200">{item}</span>
@@ -43,8 +43,8 @@ const CTA = () => {
             
             <div className="flex flex-col justify-center bg-white/5 rounded-xl p-6">
               <div className="mb-4 text-center">
-                <span className="text-gray-400 text-sm line-through">De R$197,00 por</span>
-                <div className="text-3xl font-bold text-white">R$ 97,00</div>
+                <span className="text-gray-400 text-sm line-through">De R$97,00 por</span>
+                <div className="text-3xl font-bold text-white">R$ 29,90</div>
                 <span className="text-neon-cyan text-sm">Pagamento único</span>
               </div>
               
@@ -63,7 +63,7 @@ const CTA = () => {
           
           <div className="text-center pt-6 border-t border-white/10">
             <p className="text-gray-300">
-              Dúvidas? Entre em contato pelo email <span className="text-neon-cyan">suporte@guiadebolso.com.br</span>
+              Dúvidas? Entre em contato pelo email <span className="text-neon-cyan">contato@elifatima.com</span>
             </p>
           </div>
         </div>

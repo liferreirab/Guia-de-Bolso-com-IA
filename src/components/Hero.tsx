@@ -43,7 +43,7 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Imagem */}
+        {/* Imagem com nota manuscrita */}
         <div className="relative max-w-md w-full animate-float">
           <img 
             src="/lovable-uploads/e3ad022b-6398-4a75-a41a-9cd4376e8e7f.png" 
@@ -52,6 +52,11 @@ const Hero = () => {
           />
           <div className="absolute -bottom-4 -right-4 w-full h-full bg-neon-pink/30 rounded-2xl 
             blur-xl z-0"></div>
+            
+          {/* Nota manuscrita */}
+          <div className="absolute bottom-4 left-4 transform rotate-[-5deg] bg-white/90 px-3 py-1 rounded shadow-md z-20">
+            <p className="text-neon-black font-handwriting text-sm">essa imagem foi 100% feita por IA!</p>
+          </div>
         </div>
       </div>
       

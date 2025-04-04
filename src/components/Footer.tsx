@@ -20,6 +20,9 @@ const Footer = () => {
               <span>•</span>
               <a href="#" className="hover:text-neon-blue">Política de Privacidade</a>
             </div>
+            <p className="text-gray-400 text-sm mt-2">
+              contato@elifatima.com
+            </p>
           </div>
         </div>
       </div>
