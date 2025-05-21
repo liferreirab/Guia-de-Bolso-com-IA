@@ -19,7 +19,7 @@ const benefits = [
     id: 3,
     icon: <RefreshCw className="h-8 w-8 text-neon-purple" />,
     title: "Atualizações Gratuitas",
-    description: "Acesso vitalício com todas as atualizações futuras sem custo adicional"
+    description: "Acesso a todas as atualizações futuras sem custo adicional"
   },
   {
     id: 4,
