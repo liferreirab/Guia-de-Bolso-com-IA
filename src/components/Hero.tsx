@@ -40,7 +40,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white py-6 px-8 rounded-xl 
               shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]">
-              <a href="https://pay.hotmart.com/M87692618I?bid=1743367203678" className="w-full h-full">
+              <a href="https://pay.hotmart.com/M87692618I?checkoutMode=10" className="w-full h-full">
                 Quero Meu Guia Agora!
               </a>
             </Button>
