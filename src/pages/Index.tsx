@@ -7,8 +7,29 @@ import ProductShowcase from '@/components/ProductShowcase';
 import Benefits from '@/components/Benefits';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { useEffect } from "react";
 
 const Index = () => {
+useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const fbclid = urlParams.get("fbclid");
+
+    if (fbclid) {
+      const checkoutLinks = document.querySelectorAll('a[href*="pay.hotmart.com"]');
+      checkoutLinks.forEach(link => {
+        try {
+          const anchor = link as HTMLAnchorElement;
+          const url = new URL(anchor.href);
+          url.searchParams.set("fbclid", fbclid);
+          anchor.href = url.toString();
+        } catch (error) {
+          console.error("Failed to update fbclid on link", error);
+        }
+      });
+    }
+  }, []);
+
+
   return (
     <div className="min-h-screen flex flex-col relative">
       <Navbar />
