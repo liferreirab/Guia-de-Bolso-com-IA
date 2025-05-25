@@ -38,12 +38,14 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white py-6 px-8 rounded-xl 
-              shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]">
-              <a href="https://pay.hotmart.com/M87692618I?bid=1743367203678" className="w-full h-full flex items-center justify-center">
-                Quero Meu Guia Agora!
-              </a>
-            </Button>
+            <a 
+              href="https://pay.hotmart.com/M87692618I?bid=1743367203678" 
+              className="bg-neon-pink hover:bg-neon-pink/80 text-white py-6 px-8 rounded-xl 
+              shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]
+              flex items-center justify-center text-center font-medium"
+            >
+              Quero Meu Guia Agora!
+            </a>
             <Button 
               variant="outline" 
               className="border-neon-blue text-neon-blue py-6 px-8 rounded-xl 
@@ -59,11 +61,12 @@ const Hero = () => {
         {/* Imagem otimizada com preloading e formatos modernos */}
         <div className="relative max-w-md w-full animate-float">
           <picture>
-            {/* Fallback para browsers que não suportam WebP */}
+            {/* WebP format for modern browsers */}
             <source 
-              srcSet="/lovable-uploads/e3ad022b-6398-4a75-a41a-9cd4376e8e7f.png" 
-              type="image/png" 
+              srcSet="/lovable-uploads/e3ad022b-6398-4a75-a41a-9cd4376e8e7f.webp" 
+              type="image/webp" 
             />
+            {/* Fallback para browsers que não suportam WebP */}
             <img 
               src="/lovable-uploads/e3ad022b-6398-4a75-a41a-9cd4376e8e7f.png"
               alt="Criação de conteúdo com IA" 
@@ -80,7 +83,7 @@ const Hero = () => {
             
           {/* Nota manuscrita */}
           <div className="absolute bottom-4 left-4 transform rotate-[-5deg] bg-white/90 px-3 py-1 rounded shadow-md z-20">
-            <p className="text-neon-black font-handwriting text-lg md:text-xl">essa imagem foi 100% feita por IA!</p>
+            <p className="text-neon-black font-handwriting text-xl md:text-2xl">essa imagem foi 100% feita por IA!</p>
           </div>
         </div>
       </div>
