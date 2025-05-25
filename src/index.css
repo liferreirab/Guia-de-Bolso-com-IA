@@ -54,10 +54,20 @@
   body {
     @apply bg-neon-black text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    /* Performance optimization for rendering */
+    font-display: swap;
   }
 
   html {
     @apply scroll-smooth;
+    /* Performance optimization for scrolling */
+    scroll-behavior: smooth;
+  }
+
+  /* Optimize image rendering */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
 
@@ -73,6 +83,8 @@
 
   .glass-card {
     @apply backdrop-blur-lg bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
+    /* Performance optimization for backdrop-filter */
+    will-change: backdrop-filter;
   }
   
   .neon-glow {
@@ -93,5 +105,14 @@
   
   .text-gradient {
     @apply bg-gradient-blue-pink bg-clip-text text-transparent;
+  }
+
+  /* Performance optimization for animations */
+  .animate-float {
+    will-change: transform;
+  }
+
+  .animate-glow {
+    will-change: text-shadow;
   }
 }
