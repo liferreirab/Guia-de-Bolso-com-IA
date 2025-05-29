@@ -13,6 +13,9 @@ const Index = () => {
 useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const fbclid = urlParams.get("fbclid");
+    const utmSource = urlParams.get("utm_source");
+    const utmMedium = urlParams.get("utm_medium");
+    const utmCampaign = urlParams.get("utm_campaign");
 
     if (fbclid) {
       const checkoutLinks = document.querySelectorAll('a[href*="pay.hotmart.com"]');
@@ -21,6 +24,10 @@ useEffect(() => {
           const anchor = link as HTMLAnchorElement;
           const url = new URL(anchor.href);
           url.searchParams.set("fbclid", fbclid);
+          url.searchParams.set("utm_source", utmSource || "default_source");
+          url.searchParams.set("utm_medium", utmMedium || "default_medium");
+          url.searchParams.set("utm_campaign", utmCampaign || "default_campaign");
+          url.searchParams.set("src", utmCampaign || "default_campaign");
           anchor.href = url.toString();
         } catch (error) {
           console.error("Failed to update fbclid on link", error);
