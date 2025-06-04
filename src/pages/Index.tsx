@@ -7,6 +7,7 @@ import ProductShowcase from '@/components/ProductShowcase';
 import Benefits from '@/components/Benefits';
 import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
+import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import { useEffect } from "react";
 
@@ -47,6 +48,7 @@ useEffect(() => {
         <Features />
         <ProductShowcase />
         <Benefits />
+        <FAQ />
         <CTA />
       </main>
       <Footer />
