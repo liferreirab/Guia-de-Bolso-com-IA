@@ -7,9 +7,14 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { useEffect } from 'react';
 import ReactPixel from 'react-facebook-pixel';
+import Clarity from '@microsoft/clarity';
+
 
 const queryClient = new QueryClient();
 const PIXEL_ID = '398220617905716';
+
+const projectId = "ruf67xmebx"
+Clarity.init(projectId);
 
 const PixelTracker = () => {
   const location = useLocation();
