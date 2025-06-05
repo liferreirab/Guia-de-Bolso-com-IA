@@ -48,8 +48,8 @@ useEffect(() => {
         <Features />
         <ProductShowcase />
         <Benefits />
-        <FAQ />
         <CTA />
+        <FAQ />
       </main>
       <Footer />
     </div>

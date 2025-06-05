@@ -44,16 +44,17 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((t) => (
-            <div 
+            <div
               key={t.id}
               className="glass-card p-6 rounded-xl flex flex-col items-center text-center
                 transition-all duration-300 hover:shadow-[0_0_25px_rgba(142,45,226,0.3)]"
             >
-              <img 
-                src={t.image} 
-                alt={t.name} 
-                className="w-180 h-60 mb-4 object-cover border-2 border-neon-pink"
+              <img
+                src={t.image}
+                alt={t.name}
+                className="w-full max-w-xs sm:max-w-sm h-auto mb-4 object-cover rounded-lg border-2 border-neon-pink"
               />
+
               <h3 className="text-lg font-semibold text-white mb-2">{t.name}</h3>
             </div>
           ))}

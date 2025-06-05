@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const faqs = [
   {
     question: "Quanto tempo terei acesso ao conteúdo?",
-    answer: "Você terá acesso completo ao conteúdo por 12 meses, incluindo todas as atualizações durante esse período."
+    answer: "Você terá acesso completo ao conteúdo por 6 meses, incluindo todas as atualizações durante esse período."
   },
   {
     question: "Preciso ter experiência prévia como social media para aproveitar o material?",
