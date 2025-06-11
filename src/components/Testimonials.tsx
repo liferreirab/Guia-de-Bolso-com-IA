@@ -21,6 +21,11 @@ const testimonials = [
     name: "Glízia",
     image: "/testimonials/IMG_0859.jpg",
   },
+  {
+    id: 5,
+    name: "Ayumi",
+    image: "/testimonials/30.png",
+  }
 ];
 
 const Testimonials = () => {
