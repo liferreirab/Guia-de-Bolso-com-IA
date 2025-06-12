@@ -44,36 +44,6 @@ const Navbar = () => {
             </a>
           </div>
           
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a onClick={() => scrollTo('features')} className="text-gray-300 hover:text-white cursor-pointer">
-              Recursos
-            </a>
-            <a onClick={() => scrollTo('product')} className="text-gray-300 hover:text-white cursor-pointer">
-              O Guia
-            </a>
-            <a onClick={() => scrollTo('benefits')} className="text-gray-300 hover:text-white cursor-pointer">
-              Benefícios
-            </a>
-            <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white rounded-lg 
-              shadow-[0_0_10px_rgba(255,60,142,0.3)] transition-all hover:shadow-[0_0_15px_rgba(255,60,142,0.5)]">
-              <a href="https://pay.hotmart.com/M87692618I?checkoutMode=10" className="w-full h-full">
-                Comprar Agora
-              </a>
-            </Button>
-          </div>
-          
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <Button 
-              variant="ghost"
-              size="icon"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white"
-            >
-              {mobileMenuOpen ? <X /> : <Menu />}
-            </Button>
-          </div>
         </div>
       </div>
       
