@@ -11,6 +11,7 @@ import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import { useEffect } from "react";
 
+
 const Index = () => {
 useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);

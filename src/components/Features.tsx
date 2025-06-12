@@ -1,6 +1,9 @@
 
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { scrollToCTA } from '@/utils/scrollToCta';
+
 
 const featuresList = [
   {
@@ -36,6 +39,7 @@ const featuresList = [
 ];
 
 const Features = () => {
+  
   return (
     <div id="features" className="py-24 w-full bg-neon-black relative overflow-hidden">
       {/* Background decorations */}
@@ -68,6 +72,17 @@ const Features = () => {
             </div>
           ))}
         </div>
+              {/* Call-to-action button */}
+      <div className="mt-16 flex justify-center">
+        <Button
+          className="bg-neon-pink hover:bg-neon-pink/80 text-white text-xl font-bold py-6 px-10 rounded-2xl 
+          shadow-[0_0_20px_rgba(255,60,142,0.6)] hover:shadow-[0_0_30px_rgba(255,60,142,0.9)] 
+          transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]"
+          onClick={scrollToCTA}
+        >
+          Quero Meu Guia Agora!
+        </Button>
+      </div>
       </div>
     </div>
   );

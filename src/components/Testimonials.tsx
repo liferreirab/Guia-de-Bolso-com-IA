@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from "@/components/ui/button";
+import { scrollToCTA } from '@/utils/scrollToCta';
 
 const testimonials = [
   {
@@ -8,27 +10,29 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Rogna",
-    image: "/testimonials/27.png",
+    name: "Ayumi",
+    image: "/testimonials/30.png",
   },
   {
     id: 3,
-    name: "Allana",
-    image: "/testimonials/29.png",
+    name: "Hogna",
+    image: "/testimonials/27.png",
   },
   {
     id: 4,
-    name: "Glízia",
-    image: "/testimonials/IMG_0859.jpg",
+    name: "Laíza",
+    image: "/testimonials/29.png",
   },
   {
     id: 5,
-    name: "Ayumi",
-    image: "/testimonials/30.png",
+    name: "Glízia",
+    image: "/testimonials/IMG_0859.jpg",
   }
+
 ];
 
 const Testimonials = () => {
+  
   return (
     <div id="benefits" className="py-24 w-full relative overflow-hidden">
       {/* Background effect */}
@@ -64,7 +68,19 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
+        {/* Call-to-action button */}
+        <div className="mt-16 flex justify-center">
+          <Button
+            className="bg-neon-pink hover:bg-neon-pink/80 text-white text-xl font-bold py-6 px-10 rounded-2xl 
+          shadow-[0_0_20px_rgba(255,60,142,0.6)] hover:shadow-[0_0_30px_rgba(255,60,142,0.9)] 
+          transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]"
+            onClick={scrollToCTA}
+          >
+            Quero Meu Guia Agora!
+          </Button>
+        </div>
       </div>
+
     </div>
   );
 };

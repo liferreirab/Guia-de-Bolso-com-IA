@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { scrollToCTA } from '@/utils/scrollToCta';
 
 const Hero = () => {
   const scrollToBenefits = () => {
@@ -19,38 +20,34 @@ const Hero = () => {
           radial-gradient(circle_at_70%_65%,rgba(255,60,142,0.4)_0%,transparent_50%)]">
         </div>
       </div>
-      
+
       {/* Conteúdo */}
       <div className="container relative z-10 flex flex-col lg:flex-row items-center justify-between 
         min-h-screen py-12 px-4">
-        
+
         {/* Texto */}
         <div className="flex flex-col max-w-xl mb-12 lg:mb-0">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-glow">
             <span className="text-gradient">Guia de Bolso:</span><br />
             <span className="text-white">Criação de Conteúdo com IA</span>
           </h1>
-          
+
           <p className="text-gray-300 text-lg mb-8">
-            Um material prático, estratégico e em constante atualização para social medias, 
-            criadoras de conteúdo e empreendedoras que querem usar a inteligência 
+            Um material prático, estratégico e em constante atualização para social medias,
+            criadoras de conteúdo e empreendedoras que querem usar a inteligência
             artificial como aliada.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white py-6 px-8 rounded-xl 
-              shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]">
-              <a 
-                href="https://pay.hotmart.com/M87692618I?checkoutMode=10&bid=1748529481625" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full h-full flex items-center justify-center"
-              >
-                Quero Meu Guia Agora!
-              </a>
+            <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white text-xl font-bold py-6 px-10 rounded-2xl 
+  shadow-[0_0_20px_rgba(255,60,142,0.6)] hover:shadow-[0_0_30px_rgba(255,60,142,0.9)] 
+  transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]" onClick={scrollToCTA}>
+              Quero Meu Guia Agora!
             </Button>
-            <Button 
-              variant="outline" 
+
+
+            <Button
+              variant="outline"
               className="border-neon-blue text-neon-blue py-6 px-8 rounded-xl 
               hover:bg-neon-blue/20 shadow-[0_0_10px_rgba(0,153,255,0.3)] transition-all 
               hover:shadow-[0_0_20px_rgba(0,153,255,0.6)]"
@@ -60,18 +57,18 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-        
+
         {/* Imagem otimizada com preloading e formatos modernos */}
         <div className="relative max-w-md w-full animate-float">
           <picture>
             {/* Fallback para browsers que não suportam WebP */}
-            <source 
-              srcSet="/lovable-uploads/e3ad022b-6398-4a75-a41a-9cd4376e8e7f.png" 
-              type="image/png" 
+            <source
+              srcSet="/lovable-uploads/e3ad022b-6398-4a75-a41a-9cd4376e8e7f.png"
+              type="image/png"
             />
-            <img 
+            <img
               src="/lovable-uploads/e3ad022b-6398-4a75-a41a-9cd4376e8e7f.png"
-              alt="Criação de conteúdo com IA" 
+              alt="Criação de conteúdo com IA"
               className="rounded-2xl shadow-2xl z-10 relative w-full h-auto"
               loading="eager"
               fetchPriority="high"
@@ -82,14 +79,14 @@ const Hero = () => {
           </picture>
           <div className="absolute -bottom-4 -right-4 w-full h-full bg-neon-pink/30 rounded-2xl 
             blur-xl z-0"></div>
-            
+
           {/* Nota manuscrita */}
           <div className="absolute bottom-4 left-4 transform rotate-[-5deg] bg-white/90 px-3 py-1 rounded shadow-md z-20">
             <p className="text-neon-black font-handwriting text-lg md:text-xl">essa imagem foi 100% feita por IA!</p>
           </div>
         </div>
       </div>
-      
+
       {/* Decoração */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3">
         <div className="w-24 h-1 rounded-full bg-neon-pink"></div>

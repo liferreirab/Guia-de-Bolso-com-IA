@@ -5,7 +5,7 @@ import { ArrowRight, Check } from 'lucide-react';
 
 const CTA = () => {
   return (
-    <div className="py-24 w-full bg-neon-black relative overflow-hidden">
+    <div id="cta" className="py-24 w-full bg-neon-black relative overflow-hidden">
       {/* Background effect */}
       <div className="absolute inset-0">
         <div className="absolute -top-64 -right-64 w-96 h-96 rounded-full bg-neon-pink/20 blur-3xl"></div>
