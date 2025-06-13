@@ -5,25 +5,28 @@ import { scrollToCTA } from '@/utils/scrollToCta';
 
 const ScrollPopup = () => {
   const [show, setShow] = useState(false);
+  
+useEffect(() => {
+  const dismissed = localStorage.getItem("popupDismissed");
+  if (dismissed) return;
 
-  useEffect(() => {
-    const dismissed = localStorage.getItem("popupDismissed");
-    if (dismissed) return;
+  const handleScroll = () => {
+    if ((window as any).suppressPopup) return;
 
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const docHeight = document.documentElement.scrollHeight;
-      const scrolled = (scrollTop + windowHeight) / docHeight;
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const scrolled = (scrollTop + windowHeight) / docHeight;
 
-      if (scrolled > 0.6 && !show) {
-        setShow(true);
-      }
-    };
+    if (scrolled > 0.6 && !show) {
+      setShow(true);
+    }
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [show]);
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, [show]);
+
   
   useEffect(() => {
     if (show) {
