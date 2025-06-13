@@ -27,9 +27,9 @@ const Hero = () => {
 
         {/* Texto */}
         <div className="flex flex-col max-w-xl mb-12 lg:mb-0">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-glow">
-            <span className="text-gradient">Crie uma linha editorial + calendário de postagens com IA em até 1 hora</span><br />
-            <span className="text-white text-2xl md:text-3xl lg:text-4xl mt-4 block">Mesmo que você ainda esteja travada e sem ideia do que postar</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <span className="text-white">Crie uma linha editorial + calendário de postagens com IA em até 1 hora</span><br />
+            <span className="text-gray-300 text-2xl md:text-3xl lg:text-4xl mt-4 block">Mesmo que você ainda esteja travada e sem ideia do que postar</span>
           </h1>
 
           <p className="text-gray-300 text-lg mb-8">

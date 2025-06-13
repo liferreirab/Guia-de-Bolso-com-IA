@@ -54,24 +54,14 @@ const ProductShowcase = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Mockup visual do produto */}
           <div className="flex justify-center">
-            <div className="relative max-w-md w-full">
-              <div className="bg-gradient-to-br from-neon-pink/20 to-neon-blue/20 p-8 rounded-3xl backdrop-blur-sm border border-white/10">
-                <div className="bg-white rounded-2xl p-6 shadow-2xl">
-                  <div className="w-full h-64 bg-gradient-to-br from-neon-pink/10 to-neon-blue/10 rounded-lg mb-4 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">📱</div>
-                      <div className="text-gray-600 font-medium">Guia de Bolso</div>
-                      <div className="text-sm text-gray-500">Criação de Conteúdo com IA</div>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-3 bg-gray-200 rounded-full"></div>
-                    <div className="h-3 bg-gray-200 rounded-full w-3/4"></div>
-                    <div className="h-3 bg-gray-200 rounded-full w-1/2"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-neon-pink/30 rounded-3xl blur-xl z-0"></div>
+            <div className="relative max-w-lg w-full">
+              <img
+                src="/lovable-uploads/00dbcb73-7b6c-4f29-b48d-fa294e51f509.png"
+                alt="Mockup do Guia de Bolso - Criação de Conteúdo com IA"
+                className="w-full h-auto rounded-2xl shadow-2xl relative z-10"
+                loading="lazy"
+              />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-neon-pink/30 rounded-2xl blur-xl z-0"></div>
             </div>
           </div>
 
