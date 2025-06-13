@@ -4,31 +4,15 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { scrollToCTA } from '@/utils/scrollToCta';
 
-
-const screenshots = [
-  {
-    id: 1,
-    title: "Prompts de alta performance",
-    description: "Domine a arte de conversar com a inteligência artificial e obtenha respostas precisas, criativas e alinhadas com seus objetivos.\nCom esses prompts estratégicos, você economiza tempo, desbloqueia ideias e transforma a IA em uma verdadeira aliada nos seus projetos.\n\n✔️ Estrutura validada\n✔️ Resultados rápidos\n✔️ Aplicável a diferentes nichos",
-    image: "/product-showcase/prompts_alta_performance.png"
-  }
-  ,
-  {
-    id: 2,
-    title: "Estratégias de conteúdo",
-    description: "Pare de depender de bancos de imagem genéricos ou de profissionais caros. Descubra como criar imagens únicas, impactantes e 100% personalizadas usando inteligência artificial — mesmo que você não entenda nada de design.\n\n✅ Visual profissional em minutos\n✅ Estilo próprio e autêntico\n✅ Ferramentas mais utilizadas",
-    image: "/product-showcase/estrategias_de_conteudo.png"
-  },
-  {
-    id: 3,
-    title: "Criação de imagens com IA",
-    description: "Crie conteúdos com objetivo e resultado. Neste módulo, você vai aprender a planejar, organizar e executar conteúdos que conectam e convertem.\n\n✅ Estrutura estratégica para redes sociais\n✅ Prompts prontos e adaptáveis\n✅ Mais consistência, menos bloqueios criativos",
-    image: "/product-showcase/criacao_imagens.png"
-  }
+const productFeatures = [
+  'Arquivo digital com prompts de alta performance',
+  'Guia passo a passo pra montar uma linha editorial em 1 hora',
+  'Exemplo pronto + espaço pra adaptar ao seu nicho',
+  'Dicas pra usar IA sem parecer genérico',
+  'Bônus: modelo de calendário de conteúdo'
 ];
 
 const ProductShowcase = () => {
-
   return (
     <div id="product" className="py-24 w-full bg-neon-black/90 relative">
       {/* Background lines */}
@@ -62,41 +46,56 @@ const ProductShowcase = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="text-neon-blue neon-glow-blue">O Que Você Vai Encontrar</span>
+            <span className="text-neon-blue neon-glow-blue">O que você recebe no Guia de Bolso:</span>
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Ferramentas, exemplos, tutoriais e estratégias reais, para quem quer parar de travar na hora de criar
-            e começar a usar a IA como uma parceira no processo criativo.
-          </p>
           <div className="w-24 h-1 bg-gradient-blue-pink mx-auto mt-6 rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {screenshots.map((screenshot) => (
-            <Card
-              key={screenshot.id}
-              className="bg-transparent overflow-hidden glass-card border-0 group"
-            >
-              <div className="w-full max-w-md">
-                <img
-                  src={screenshot.image}
-                  alt={screenshot.title}
-                  className="w-full h-auto object-contain transition-transform duration-500 transform group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Mockup visual do produto */}
+          <div className="flex justify-center">
+            <div className="relative max-w-md w-full">
+              <div className="bg-gradient-to-br from-neon-pink/20 to-neon-blue/20 p-8 rounded-3xl backdrop-blur-sm border border-white/10">
+                <div className="bg-white rounded-2xl p-6 shadow-2xl">
+                  <div className="w-full h-64 bg-gradient-to-br from-neon-pink/10 to-neon-blue/10 rounded-lg mb-4 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-4xl mb-2">📱</div>
+                      <div className="text-gray-600 font-medium">Guia de Bolso</div>
+                      <div className="text-sm text-gray-500">Criação de Conteúdo com IA</div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-3 bg-gray-200 rounded-full"></div>
+                    <div className="h-3 bg-gray-200 rounded-full w-3/4"></div>
+                    <div className="h-3 bg-gray-200 rounded-full w-1/2"></div>
+                  </div>
+                </div>
               </div>
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-neon-pink/30 rounded-3xl blur-xl z-0"></div>
+            </div>
+          </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon-pink transition-colors">
-                  {screenshot.title}
-                </h3>
-                <p className="whitespace-pre-line text-gray-300">{screenshot.description}</p>
-              </div>
-              <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-purple 
-                transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
-              </div>
-            </Card>
-          ))}
+          {/* Lista de features */}
+          <div className="space-y-6">
+            {productFeatures.map((feature, index) => (
+              <Card
+                key={index}
+                className="bg-transparent glass-card border-0 p-6"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-neon-pink/20 flex items-center justify-center">
+                    <span className="text-neon-pink font-bold text-sm">{index + 1}</span>
+                  </div>
+                  <div>
+                    <p className="text-white font-medium text-lg">{feature}</p>
+                  </div>
+                </div>
+                <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-purple 
+                  transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -107,10 +106,9 @@ const ProductShowcase = () => {
           transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]"
           onClick={scrollToCTA}
         >
-          Quero Meu Guia Agora!
+          🔘 Quero meu Guia de Bolso agora
         </Button>
       </div>
-
     </div>
   );
 };

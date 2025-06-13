@@ -28,23 +28,20 @@ const Hero = () => {
         {/* Texto */}
         <div className="flex flex-col max-w-xl mb-12 lg:mb-0">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-glow">
-            <span className="text-gradient">Guia de Bolso:</span><br />
-            <span className="text-white">Criação de Conteúdo com IA</span>
+            <span className="text-gradient">Crie uma linha editorial + calendário de postagens com IA em até 1 hora</span><br />
+            <span className="text-white text-2xl md:text-3xl lg:text-4xl mt-4 block">Mesmo que você ainda esteja travada e sem ideia do que postar</span>
           </h1>
 
           <p className="text-gray-300 text-lg mb-8">
-            Um material prático, estratégico e em constante atualização para social medias,
-            criadoras de conteúdo e empreendedoras que querem usar a inteligência
-            artificial como aliada.
+            O Guia de Bolso vai te ajudar a usar a inteligência artificial do jeito certo — com estratégia, leveza e resultado real.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white text-xl font-bold py-6 px-10 rounded-2xl 
   shadow-[0_0_20px_rgba(255,60,142,0.6)] hover:shadow-[0_0_30px_rgba(255,60,142,0.9)] 
   transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]" onClick={scrollToCTA}>
-              Quero Meu Guia Agora!
+              🔘 Quero destravar meu conteúdo com IA agora
             </Button>
-
 
             <Button
               variant="outline"

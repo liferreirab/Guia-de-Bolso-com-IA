@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import PainReliefSection from '@/components/PainReliefSection';
 import Features from '@/components/Features';
 import ProductShowcase from '@/components/ProductShowcase';
 import Benefits from '@/components/Benefits';
@@ -11,7 +12,6 @@ import CTA from '@/components/CTA';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import { useEffect } from "react";
-
 
 const Index = () => {
 useEffect(() => {
@@ -47,6 +47,7 @@ useEffect(() => {
       <CountdownBanner />
       <main>
         <Hero />
+        <PainReliefSection />
         <Testimonials />
         <Features />
         <ProductShowcase />
