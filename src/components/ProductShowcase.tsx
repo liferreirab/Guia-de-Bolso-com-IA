@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { scrollToCTA } from '@/utils/scrollToCta';
 
 const productFeatures = [
+  'Em 1 hora você monta sua linha editorial do zero com uma aula direta e prática, sem enrolação',
   'Arquivo digital com prompts de alta performance',
-  'Guia passo a passo pra montar uma linha editorial em 1 hora',
-  'Exemplo pronto + espaço pra adaptar ao seu nicho',
-  'Dicas pra usar IA sem parecer genérico',
+  'Checklist de planejamento prático e modelo de briefing pronto para personalizar com as dores do seu público',
+  'O que ninguém te ensina: como usar IA e ainda parecer 100% você',
   'Bônus: modelo de calendário de conteúdo'
 ];
 
@@ -56,7 +56,7 @@ const ProductShowcase = () => {
           <div className="flex justify-center">
             <div className="relative max-w-lg w-full">
               <img
-                src="/lovable-uploads/9f937275-a361-4ee0-8758-014d2410c0eb.png"
+                src="/product-showcase/mockup.png"
                 alt="Mockup do Guia de Bolso - Criação de Conteúdo com IA"
                 className="w-full h-auto rounded-2xl shadow-2xl relative z-10"
                 loading="lazy"

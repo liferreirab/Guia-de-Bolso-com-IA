@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import { useEffect } from 'react';
 import ReactPixel from 'react-facebook-pixel';
 import Clarity from '@microsoft/clarity';
+import ScrollPopup from './components/ScrollPopup'; // adjust path as needed
 
 
 const queryClient = new QueryClient();

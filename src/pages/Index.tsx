@@ -12,9 +12,11 @@ import CTA from '@/components/CTA';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import { useEffect } from "react";
+import ScrollPopup from '../components/ScrollPopup'; // adjust path as needed
+
 
 const Index = () => {
-useEffect(() => {
+  useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const fbclid = urlParams.get("fbclid");
     const utmSource = urlParams.get("utm_source");
@@ -42,19 +44,18 @@ useEffect(() => {
 
 
   return (
-    <div className="min-h-screen flex flex-col relative">
+    <div className="min-h-screen bg-[url('/bg/grid-dark.png')] bg-cover bg-center text-white">
       <Navbar />
       <CountdownBanner />
-      <main>
-        <Hero />
-        <PainReliefSection />
-        <Testimonials />
-        <Features />
-        <ProductShowcase />
-        <Benefits />
-        <CTA />
-        <FAQ />
-      </main>
+      <ScrollPopup />
+      <Hero />
+      <PainReliefSection />
+      <Testimonials />
+      <Features />
+      <ProductShowcase />
+      <Benefits />
+      <CTA />
+      <FAQ />
       <Footer />
     </div>
   );
