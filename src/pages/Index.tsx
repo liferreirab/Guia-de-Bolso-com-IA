@@ -6,6 +6,7 @@ import Features from '@/components/Features';
 import ProductShowcase from '@/components/ProductShowcase';
 import Benefits from '@/components/Benefits';
 import Testimonials from '@/components/Testimonials';
+import CountdownBanner from '@/components/CountdownBanner';
 import CTA from '@/components/CTA';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
@@ -43,6 +44,7 @@ useEffect(() => {
   return (
     <div className="min-h-screen flex flex-col relative">
       <Navbar />
+      <CountdownBanner />
       <main>
         <Hero />
         <Testimonials />
