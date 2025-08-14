@@ -44,7 +44,7 @@ const CTA = () => {
             <div className="flex flex-col justify-center bg-white/5 rounded-xl p-6">
               <div className="mb-4 text-center">
                 <span className="text-gray-400 text-sm line-through">De R$97,00 por</span>
-                <div className="text-3xl font-bold text-white">R$ 29,90</div>
+                <div className="text-3xl font-bold text-white">R$47</div>
                 <span className="text-neon-cyan text-sm">Pagamento único</span>
               </div>
               
