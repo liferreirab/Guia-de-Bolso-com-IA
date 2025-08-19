@@ -47,7 +47,6 @@ const Index = () => {
     <div className="min-h-screen bg-[url('/bg/grid-dark.png')] bg-cover bg-center text-white">
       <Navbar />
       <CountdownBanner />
-      <ScrollPopup />
       <Hero />
       <PainReliefSection />
       <Testimonials />
