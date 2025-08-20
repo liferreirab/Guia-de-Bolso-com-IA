@@ -22,7 +22,7 @@ const CTA = () => {
               <span className="text-white">Criação de Conteúdo?</span>
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              O Guia de Bolso: Criação de Conteúdo com IA vai direto ao ponto e entrega tudo que você precisa 
+              O Mini Curso: IA para Redes Sociais vai direto ao ponto e entrega tudo que você precisa 
               para usar a inteligência artificial a seu favor.
             </p>
           </div>
@@ -31,7 +31,7 @@ const CTA = () => {
             <div>
               <h3 className="text-neon-pink font-bold text-xl mb-4">O Que Você Recebe:</h3>
               <ul className="space-y-3">
-                {['Aulas 100% online', 'Acesso de qualquer lugar do mundo', 'Atualizações gratuitas durante seu acesso', 
+                {['Aulas gravadas', 'Acesso de qualquer lugar do mundo', 'Atualizações gratuitas durante seu acesso', 
                   'Tutoriais passo a passo', 'Modelos de prompts prontos', 'Suporte por email'].map((item, i) => (
                   <li key={i} className="flex items-start">
                     <Check className="w-5 h-5 text-neon-blue mr-2 flex-shrink-0" />
@@ -57,7 +57,7 @@ const CTA = () => {
                   rel="noopener noreferrer"
                   className="w-full h-full flex items-center justify-center gap-2"
                 >
-                  <span>Quero Meu Guia Agora</span>
+                  <span>Quero Meu Mini Curso Agora</span>
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>

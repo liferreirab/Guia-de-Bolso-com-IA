@@ -46,7 +46,7 @@ const ProductShowcase = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="text-neon-blue neon-glow-blue">O que você recebe no Guia de Bolso:</span>
+            <span className="text-neon-blue neon-glow-blue">O que você recebe no Mini Curso: IA para Redes Sociais:</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-blue-pink mx-auto mt-6 rounded-full"></div>
         </div>
@@ -96,7 +96,7 @@ const ProductShowcase = () => {
           transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]"
           onClick={scrollToCTA}
         >
-          🔘 Quero meu Guia de Bolso agora
+          🔘 Quero meu Mini Curso agora
         </Button>
       </div>
     </div>

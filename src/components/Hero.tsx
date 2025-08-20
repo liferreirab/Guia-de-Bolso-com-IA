@@ -28,15 +28,15 @@ const Hero = () => {
         <div className="flex flex-col w-full max-w-xl mb-12 lg:mb-0 px-4 sm:px-0">
   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
     <span className="text-white block">
-      Crie uma linha editorial + calendário de postagens com IA em até 1 hora
+      Monte sua linha editorial completa + calendário de posts com IA em até 1 hora.
     </span>
     <span className="text-neon-pink neon-glow text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 block">
-      Mesmo que você ainda esteja travada e sem ideia do que postar
+      Mesmo que você ainda esteja travada ou nunca tenha usado IA.
     </span>
   </h1>
 
   <p className="text-gray-300 text-base sm:text-lg mb-8 leading-relaxed">
-    O Guia de Bolso vai te ajudar a usar a inteligência artificial do jeito certo — com estratégia, leveza e resultado real.
+    O Mini Curso: IA para Redes Sociais vai te ajudar a usar a inteligência artificial do jeito certo — com estratégia, leveza e resultado real.
   </p>
 
   <div className="flex flex-col sm:flex-row gap-4">

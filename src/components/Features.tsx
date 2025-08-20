@@ -7,9 +7,19 @@ import { scrollToCTA } from '@/utils/scrollToCta';
 
 const featuresList = [
   {
-    id: 1,
-    title: "Fotos Hiper-Realistas",
-    description: "Crie fotos profissionais com IA, mesmo sem experiência em tecnologia"
+    id: 6,
+    title: "Calendário Editorial",
+    description: "Use modelos prontos de calendário editorial para planejar com clareza"
+  },
+  {
+    id: 5,
+    title: "Linha Editorial Inteligente",
+    description: "Monte uma linha editorial com o apoio da IA para conteúdos consistentes"
+  },
+  {
+    id: 4,
+    title: "Rotina Organizada",
+    description: "Tenha uma rotina de criação produtiva, com ferramentas que otimizam tempo"
   },
   {
     id: 2,
@@ -22,21 +32,12 @@ const featuresList = [
     description: "Produza stories estratégicos e criativos com IA, com muito mais facilidade"
   },
   {
-    id: 4,
-    title: "Rotina Organizada",
-    description: "Tenha uma rotina de criação produtiva, com ferramentas que otimizam tempo"
-  },
-  {
-    id: 5,
-    title: "Linha Editorial Inteligente",
-    description: "Monte uma linha editorial com o apoio da IA para conteúdos consistentes"
-  },
-  {
-    id: 6,
-    title: "Calendário Editorial",
-    description: "Use modelos prontos de calendário editorial para planejar com clareza"
+    id: 1,
+    title: "Fotos Hiper-Realistas",
+    description: "Crie fotos profissionais com IA, mesmo sem experiência em tecnologia"
   }
 ];
+
 
 const Features = () => {
   
@@ -51,7 +52,7 @@ const Features = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 inline-block">
-            <span className="text-gradient neon-glow">O Guia é Perfeito Para</span>
+            <span className="text-gradient neon-glow"> Perfeito Para</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-blue-pink mx-auto rounded-full"></div>
         </div>
@@ -80,7 +81,7 @@ const Features = () => {
           transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]"
           onClick={scrollToCTA}
         >
-          Quero Meu Guia Agora!
+          Quero Meu Mini Curso Agora!
         </Button>
       </div>
       </div>

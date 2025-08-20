@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="text-gradient font-bold text-2xl">
-              Guia de Bolso
+              Mini Curso: IA para Redes Sociais
             </a>
           </div>
           
@@ -55,7 +55,7 @@ const Navbar = () => {
               Recursos
             </a>
             <a onClick={() => scrollTo('product')} className="text-gray-300 hover:text-white p-2 cursor-pointer">
-              O Guia
+              O Mini Curso
             </a>
             <a onClick={() => scrollTo('benefits')} className="text-gray-300 hover:text-white p-2 cursor-pointer">
               Benefícios

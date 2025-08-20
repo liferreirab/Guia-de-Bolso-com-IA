@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 
 const benefits = [
   {
-    id: 1,
-    icon: <Sparkles className="h-8 w-8 text-neon-pink" />,
-    title: "Conteúdo Prático",
-    description: "Material direto ao ponto com ferramentas práticas para usar hoje mesmo"
-  },
+  id: 1,
+  icon: <Sparkles className="h-8 w-8 text-neon-pink" />,
+  title: "Acesso Imediato",
+  description: "Aulas gravadas, práticas e diretas ao ponto. Comece a aprender na hora em que fizer sua inscrição."
+},
   {
     id: 2,
     icon: <Clock className="h-8 w-8 text-neon-blue" />,
@@ -57,7 +57,7 @@ const Benefits = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="text-gradient">Por Que Escolher Este Guia?</span>
+            <span className="text-gradient">Por Que Escolher Este Mini Curos?</span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
             Um conteúdo vivo que evolui com as tecnologias e entrega exatamente o que você precisa
@@ -89,7 +89,7 @@ const Benefits = () => {
           transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]"
           onClick={scrollToCTA}
         >
-          Quero Meu Guia Agora!
+          Quero Meu Mini Curso Agora!
         </Button>
       </div>
     </div>

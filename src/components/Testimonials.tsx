@@ -76,7 +76,7 @@ const Testimonials = () => {
           transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]"
             onClick={scrollToCTA}
           >
-            Quero Meu Guia Agora!
+            Quero Meu Mini Curso Agora!
           </Button>
         </div>
       </div>
