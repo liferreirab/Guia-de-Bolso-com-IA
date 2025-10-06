@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="text-gradient font-bold text-2xl">
-              Mini Curso: IA para Redes Sociais
+              
             </a>
           </div>
           
