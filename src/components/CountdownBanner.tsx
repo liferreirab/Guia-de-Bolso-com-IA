@@ -5,7 +5,8 @@ const CountdownBanner = () => {
 
   useEffect(() => {
     const end = new Date();
-    end.setHours(end.getHours() + 18);
+    end.setHours(end.getHours() + 3);
+    end.setMinutes(end.getMinutes() + 7)
 
     const updateTimer = () => {
       const now = new Date();
