@@ -63,19 +63,24 @@ const PainReliefSection = () => {
 
         {/* Botão de ação */}
         <div className="mt-12 text-center">
-          <Button
-            className="bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 hover:from-blue-500/90 hover:to-purple-500/90 
-              text-white text-lg font-semibold py-5 px-8 sm:px-10 rounded-2xl 
-              shadow-[0_0_20px_rgba(255,60,142,0.5)] hover:shadow-[0_0_30px_rgba(255,60,142,0.7)] 
-              transition-transform duration-300 hover:scale-105"
-          >
-            <a
-              href="#cta"
-              className="flex items-center justify-center gap-2 w-full"
-            >
-              Quero ganhar tempo e resultados agora
-            </a>
-          </Button>
+         <Button
+  className="w-full max-w-full sm:w-auto sm:max-w-none mx-auto
+             text-center whitespace-normal break-words
+             bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500
+             hover:from-blue-500/90 hover:to-purple-500/90 
+             text-white text-base sm:text-lg font-semibold
+             py-4 sm:py-5 px-4 sm:px-10 rounded-2xl
+             shadow-[0_0_20px_rgba(255,60,142,0.5)] hover:shadow-[0_0_30px_rgba(255,60,142,0.7)]
+             transition-transform duration-300 sm:hover:scale-105"
+>
+  <a
+    href="#cta"
+    className="block w-full text-center"
+  >
+    Quero ganhar tempo e resultados agora
+  </a>
+</Button>
+
         </div>
       </div>
     </div>

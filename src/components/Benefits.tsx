@@ -54,17 +54,17 @@ const Benefits = () => {
         </div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="text-gradient">Por Que Escolher Este Mini Curos?</span>
-          </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Um conteúdo vivo que evolui com as tecnologias e entrega exatamente o que você precisa
-            para criar conteúdo excepcional com a ajuda da IA.
-          </p>
-          <div className="w-24 h-1 bg-gradient-blue-pink mx-auto mt-6 rounded-full"></div>
-        </div>
+     <div className="container mx-auto px-4 relative z-10">
+  <div className="text-center mb-16">
+    <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <span className="text-gradient">Por Que Escolher Este Mini Curso?</span>
+    </h2>
+    <p className="text-gray-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+      Um conteúdo vivo que evolui com as tecnologias e entrega exatamente o que você precisa
+      para criar conteúdo excepcional com a ajuda da IA.
+    </p>
+    <div className="w-24 h-1 bg-gradient-blue-pink mx-auto mt-6 rounded-full"></div>
+  </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit) => (

@@ -96,10 +96,10 @@ const ProductShowcase = () => {
 
               <div className="flex-1">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug">
-                  Calendário Editorial Pronto — <span className="bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">30 dias de conteúdo estratégico</span>
+                  Template de Calendário Editorial — <span className="bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">Para você copiar e colar!</span>
                 </h3>
                 <p className="text-gray-300 mt-2 text-sm sm:text-base leading-relaxed">
-                  Template plug-and-play (Notion/Sheets) para arrastar, ajustar e publicar. Economize tempo e mantenha consistência desde o primeiro dia.
+                  Economize tempo e mantenha consistência desde o primeiro dia.
                 </p>
               </div>
 

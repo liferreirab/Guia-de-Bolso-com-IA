@@ -17,7 +17,7 @@ const CTA = () => {
           {/* Header */}
           <div className="text-center mb-8 md:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-              <span className="text-neon-blue">Pronta Para Transformar Sua</span><br className="hidden sm:block" />
+              <span className="text-neon-blue">Pronta Para Transformar Sua </span><br className="hidden sm:block" />
               <span className="text-white">Criação de Conteúdo?</span>
             </h2>
             <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -59,16 +59,17 @@ const CTA = () => {
                   ))}
 
                   {/* Linha total */}
-                  <div className="bg-gradient-to-r from-blue-500/20 via-pink-500/20 to-purple-500/20">
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5">
-                      <span className="text-white font-semibold text-base sm:text-xl">
-                        Valor Total
-                      </span>
-                      <span className="text-white font-bold text-xl sm:text-3xl">
-                        R$582
-                      </span>
-                    </div>
-                  </div>
+                <div className="bg-gradient-to-r from-blue-500/20 via-pink-500/20 to-purple-500/20">
+  <div className="flex flex-row justify-center items-center gap-2 text-center p-4 sm:p-5">
+    <span className="text-white font-semibold text-base sm:text-xl">
+      Valor Total
+    </span>
+    <span className="text-white font-bold text-xl sm:text-3xl">
+      R$582
+    </span>
+  </div>
+</div>
+
 
                   {/* Preço promocional */}
                   <div className="bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 text-center py-5 sm:py-6">

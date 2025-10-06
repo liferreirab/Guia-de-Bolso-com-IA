@@ -70,14 +70,20 @@ const Testimonials = () => {
         </div>
         {/* Call-to-action button */}
         <div className="mt-16 flex justify-center">
-          <Button
-            className="bg-neon-pink hover:bg-neon-pink/80 text-white text-xl font-bold py-6 px-10 rounded-2xl 
-          shadow-[0_0_20px_rgba(255,60,142,0.6)] hover:shadow-[0_0_30px_rgba(255,60,142,0.9)] 
-          transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]"
-            onClick={scrollToCTA}
-          >
-            Garantir minha vaga com o bônus!
-          </Button>
+         <Button
+  className="w-full max-w-full sm:w-auto mx-auto 
+    bg-neon-pink hover:bg-neon-pink/80 
+    text-white text-base sm:text-xl font-bold 
+    py-5 sm:py-6 px-4 sm:px-10 rounded-2xl 
+    text-center whitespace-normal break-words 
+    shadow-[0_0_20px_rgba(255,60,142,0.6)] hover:shadow-[0_0_30px_rgba(255,60,142,0.9)] 
+    transition-transform duration-300 sm:hover:scale-105 
+    animate-pulse [animation-duration:3s]"
+  onClick={scrollToCTA}
+>
+  Garantir minha vaga com o bônus!
+</Button>
+
         </div>
       </div>
 
