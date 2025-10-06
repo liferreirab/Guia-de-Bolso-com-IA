@@ -89,7 +89,7 @@ const Benefits = () => {
           transition-transform duration-300 transform hover:scale-105 animate-pulse [animation-duration:3s]"
           onClick={scrollToCTA}
         >
-          Quero Meu Mini Curso Agora!
+          Quero meu acesso agora
         </Button>
       </div>
     </div>

@@ -21,49 +21,52 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Conteúdo */}
-      <div className="container relative z-10 flex flex-col lg:flex-row items-center justify-between 
-        min-h-screen py-12 px-4">
-
-        <div className="flex flex-col w-full max-w-xl mb-12 lg:mb-0 px-4 sm:px-0">
-  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-    <span className="text-white block">
-      Monte sua linha editorial completa + calendário de posts com IA em até 1 hora.
-    </span>
-    <span className="text-neon-pink neon-glow text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 block">
-      Mesmo que você ainda esteja travada ou nunca tenha usado IA.
-    </span>
-  </h1>
-
-  <p className="text-gray-300 text-base sm:text-lg mb-8 leading-relaxed">
-    O Mini Curso: IA para Redes Sociais vai te ajudar a usar a inteligência artificial do jeito certo — com estratégia, leveza e resultado real.
-  </p>
-
-  <div className="flex flex-col sm:flex-row gap-4">
-    <Button
-  className="w-full sm:w-auto text-center whitespace-normal break-words 
-      bg-neon-pink hover:bg-neon-pink/80 text-white text-sm sm:text-base font-bold 
-      py-5 px-6 sm:px-10 rounded-2xl shadow-[0_0_20px_rgba(255,60,142,0.6)] 
-      hover:shadow-[0_0_30px_rgba(255,60,142,0.9)] transition-transform duration-300 
-      transform hover:scale-105 animate-pulse [animation-duration:3s]"
-    onClick={scrollToCTA}
+     {/* Conteúdo */}
+<div
+  className="container relative z-10 flex flex-col lg:flex-row items-center justify-between 
+    min-h-[80vh] lg:min-h-screen py-12 px-6 sm:px-8 md:px-10 lg:px-16"
 >
-  🔘 Quero destravar meu conteúdo agora
-</Button>
+  <div className="flex flex-col w-full lg:w-1/2 xl:w-3/5 mb-12 lg:mb-0 lg:pl-10 text-center lg:text-left">
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+      <span className="text-white block">
+        Crie conteúdos estratégicos que geram mais engajamento, mais clientes e mais faturamento.
+      </span>
+      <span className="text-neon-pink text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 block">
+        Pare de desperdiçar horas tentando adivinhar o que postar.
+      </span>
+    </h1>
 
+    <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 leading-relaxed max-w-xl sm:max-w-2xl mx-auto lg:mx-0">
+      Aprenda o método que usa Inteligência Artificial para planejar 
+      <span className="bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+        {' '}30 dias de conteúdo estratégico em menos de 1 hora
+      </span>, atrair clientes certos e transformar redes sociais em uma fonte previsível de lucro.
+    </p>
 
-    <Button
-      variant="outline"
-      className="w-full sm:w-auto border-neon-blue text-neon-blue py-5 px-6 sm:px-8 rounded-xl 
-        hover:bg-neon-blue/20 shadow-[0_0_10px_rgba(0,153,255,0.3)] transition-all 
-        hover:shadow-[0_0_20px_rgba(0,153,255,0.6)]"
-      onClick={scrollToBenefits}
-    >
-      Saiba Mais
-    </Button>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+      <Button
+        className="w-full sm:w-auto text-center whitespace-normal break-words 
+          bg-neon-pink hover:bg-neon-pink/80 text-white text-sm sm:text-base font-bold 
+          py-5 px-6 sm:px-10 rounded-2xl shadow-[0_0_20px_rgba(255,60,142,0.6)] 
+          hover:shadow-[0_0_30px_rgba(255,60,142,0.9)] transition-transform duration-300 
+          transform hover:scale-105 animate-pulse [animation-duration:3s]"
+        onClick={scrollToCTA}
+      >
+        Quero destravar meu conteúdo agora!
+      </Button>
+
+      <Button
+        variant="outline"
+        className="w-full sm:w-auto border-neon-blue text-neon-blue py-5 px-6 sm:px-8 rounded-xl 
+          hover:bg-neon-blue/20 shadow-[0_0_10px_rgba(0,153,255,0.3)] transition-all 
+          hover:shadow-[0_0_20px_rgba(0,153,255,0.6)]"
+        onClick={scrollToBenefits}
+      >
+        Saiba Mais
+      </Button>
+    </div>
   </div>
-</div>
-
+  
         {/* Imagem otimizada com preloading e formatos modernos */}
         <div className="relative max-w-md w-full animate-float">
           <picture>

@@ -52,7 +52,7 @@ const Features = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 inline-block">
-            <span className="text-gradient neon-glow"> Perfeito Para</span>
+            <span className="text-gradient"> Para quem cansou de postar sem resultado!</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-blue-pink mx-auto rounded-full"></div>
         </div>

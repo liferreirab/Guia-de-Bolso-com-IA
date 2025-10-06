@@ -31,8 +31,17 @@ const CountdownBanner = () => {
   }, []);
 
   return (
-<div className="w-full bg-neon-pink text-white text-center py-4 px-4 text-lg sm:text-xl font-bold shadow-md z-50">
-  🎉 Oferta por tempo limitado! Termina em <span className="ml-2 text-black bg-white px-3 py-1.5 rounded">{timeLeft}</span>
+<div className="w-full bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white text-center py-4 px-4 text-lg sm:text-xl font-bold shadow-[0_0_15px_rgba(255,255,255,0.15)] z-50">
+  🎉 Oferta por tempo limitado! Termina em
+  <span
+    className="ml-3 inline-flex items-center rounded-lg 
+               bg-gradient-to-r from-yellow-300 to-orange-400 
+               text-black px-3 py-1.5 
+               shadow-[0_6px_18px_rgba(251,191,36,0.35)] 
+               animate-pulse [animation-duration:3s]"
+  >
+    {timeLeft}
+  </span>
 </div>
 
   );
