@@ -55,7 +55,7 @@ const Navbar = () => {
               Recursos
             </a>
             <a onClick={() => scrollTo('product')} className="text-gray-300 hover:text-white p-2 cursor-pointer">
-              O Mini Curso
+              O Treinamento
             </a>
             <a onClick={() => scrollTo('benefits')} className="text-gray-300 hover:text-white p-2 cursor-pointer">
               Benefícios

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h3 className="text-gradient font-bold text-2xl mb-2">Mini Curso: IA para Redes Sociais</h3>
+            <h3 className="text-gradient font-bold text-2xl mb-2">IA para Redes Sociais</h3>
             <p className="text-gray-400">Criação de Conteúdo com IA</p>
           </div>
           

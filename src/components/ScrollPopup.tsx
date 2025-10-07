@@ -102,7 +102,7 @@ useEffect(() => {
             className="block text-center bg-neon-pink hover:bg-neon-pink/80 text-white font-bold py-3 px-6 rounded-xl transition-all"
             aria-label="Close"
           >
-            Quero meu Mini Curso!
+            Quero meu acesso!
           </button>
         </div>
 

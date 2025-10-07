@@ -36,7 +36,7 @@ const ProductShowcase = () => {
         {/* Heading */}
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            <span className="text-neon-blue">O que você recebe no Mini Curso: IA para Redes Sociais:</span>
+            <span className="text-neon-blue">O que você recebe no treinamento:</span>
           </h2>
           <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 mx-auto mt-4 sm:mt-6 rounded-full" />
         </div>
@@ -90,7 +90,7 @@ const ProductShowcase = () => {
                   <Gift className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 <span className="text-[10px] sm:text-xs uppercase tracking-wider px-2 py-1 rounded-md bg-white/10 text-white/80">
-                  Bônus Exclusivo — Só nesta turma
+                  Bônus Exclusivo — Comprando hoje você ainda leva
                 </span>
               </div>
 
@@ -104,12 +104,7 @@ const ProductShowcase = () => {
               </div>
 
               <div className="w-full md:w-auto">
-                <Button
-                  className="w-full md:w-auto bg-gradient-to-r from-blue-500 to-pink-500 hover:from-blue-500/90 hover:to-pink-500/90 text-white font-semibold px-5 py-5 md:px-6 md:py-6 rounded-xl motion-safe:transition-all"
-                  onClick={scrollToCTA}
-                >
-                  Garantir com o Bônus
-                </Button>
+          
               </div>
             </div>
           </div>
@@ -117,12 +112,19 @@ const ProductShowcase = () => {
 
         {/* CTA principal */}
         <div className="mt-10 md:mt-16 flex justify-center">
-          <Button
-            className="w-full sm:w-auto bg-neon-pink hover:bg-neon-pink/80 text-white text-lg sm:text-xl font-bold py-5 sm:py-6 px-6 sm:px-10 rounded-2xl shadow-[0_0_16px_rgba(255,60,142,0.45)] hover:shadow-[0_0_26px_rgba(255,60,142,0.7)] motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105"
-            onClick={scrollToCTA}
-          >
-            Quero meu acesso!
-          </Button>
+         <Button
+  className="w-full md:w-auto bg-gradient-to-r from-blue-500 to-pink-500 
+             hover:from-blue-500/90 hover:to-pink-500/90 
+             text-white text-lg sm:text-xl font-bold 
+             py-5 sm:py-6 px-6 sm:px-10 rounded-2xl 
+             shadow-[0_0_16px_rgba(255,60,142,0.45)] 
+             hover:shadow-[0_0_26px_rgba(255,60,142,0.7)] 
+             motion-safe:transition-all motion-safe:duration-300 
+             motion-safe:hover:scale-105"
+  onClick={scrollToCTA}
+>
+  Garantir com bônus!
+</Button>
         </div>
       </div>
     </div>

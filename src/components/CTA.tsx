@@ -21,118 +21,98 @@ const CTA = () => {
               <span className="text-white">Criação de Conteúdo?</span>
             </h2>
             <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-              O Mini Curso <span className="text-white font-semibold">IA para Redes Sociais</span> vai direto ao ponto e entrega tudo que você precisa 
+              O Curso <span className="text-white font-semibold">IA para Redes Sociais</span> vai direto ao ponto e entrega tudo que você precisa 
               para usar a Inteligência Artificial a seu favor e multiplicar seus resultados.
             </p>
           </div>
           
-          {/* Tabela de valor + CTA */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 md:mb-10">
-            {/* Lado esquerdo: itens e ancoragem */}
-            <div>
-              <h3 className="text-neon-pink font-bold text-lg sm:text-xl mb-4 sm:mb-6 text-center md:text-left">
-                O Que Você Recebe:
-              </h3>
+          {/* Box única centralizada (mantendo a ancoragem) */}
+          <div className="max-w-xl mx-auto">
+            <h3 className="text-neon-pink font-bold text-lg sm:text-xl mb-4 sm:mb-6 text-center">
+              O Que Você Recebe:
+            </h3>
 
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
-                <div className="divide-y divide-white/10">
-                  {[
-                    { name: 'Aulas gravadas e práticas', price: 'R$197' },
-                    { name: 'Modelos de prompts prontos', price: 'R$97' },
-                    { name: 'Checklist e briefing prático', price: 'R$97' },
-                    { name: 'Acesso às atualizações', price: 'R$97' },
-                    { name: 'Suporte', price: 'R$47' },
-                    { name: 'Bônus: Template de Calendário Editorial Notion', price: 'R$47' },
-                  ].map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5"
-                    >
-                      <div className="flex items-start gap-2 sm:gap-3">
-                        <Check className="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue flex-shrink-0" />
-                        <span className="text-gray-200 text-sm sm:text-base">{item.name}</span>
-                      </div>
-                      <span className="text-gray-400 line-through text-sm sm:text-lg mt-1 sm:mt-0">
-                        {item.price}
-                      </span>
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
+              <div className="divide-y divide-white/10">
+                {[
+                  { name: 'Aulas gravadas e práticas', price: 'R$197' },
+                  { name: 'Modelos de prompts prontos', price: 'R$97' },
+                  { name: 'Checklist e briefing prático', price: 'R$97' },
+                  { name: 'Acesso às atualizações', price: 'R$97' },
+                  { name: 'Suporte', price: 'R$47' },
+                  { name: 'Bônus: Template de Calendário Editorial Notion', price: 'R$47' },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5"
+                  >
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue flex-shrink-0" />
+                      <span className="text-gray-200 text-sm sm:text-base">{item.name}</span>
                     </div>
-                  ))}
-
-                  {/* Linha total */}
-                <div className="bg-gradient-to-r from-blue-500/20 via-pink-500/20 to-purple-500/20">
-  <div className="flex flex-row justify-center items-center gap-2 text-center p-4 sm:p-5">
-    <span className="text-white font-semibold text-base sm:text-xl">
-      Valor Total
-    </span>
-    <span className="text-white font-bold text-xl sm:text-3xl">
-      R$582
-    </span>
-  </div>
-</div>
-
-
-                  {/* Preço promocional */}
-                  <div className="bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 text-center py-5 sm:py-6">
-                    <p className="text-white text-base sm:text-xl mb-1 font-medium">
-                      Mas hoje você paga apenas
-                    </p>
-                   <p className="text-white font-extrabold drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] animate-pulse [animation-duration:3s] text-3xl sm:text-5xl">
-  <span className="text-base sm:text-2xl align-top mr-1">3x de</span> R$16,77
-</p>
-                    <p className="text-white/80 text-xs sm:text-sm mt-1">
-                      Acesso completo e imediato ao Mini Curso
-                    </p>
+                    <span className="text-gray-400 line-through text-sm sm:text-lg mt-1 sm:mt-0">
+                      {item.price}
+                    </span>
                   </div>
+                ))}
+
+                {/* Linha total (riscar e deixar apagado) */}
+                <div className="bg-gradient-to-r from-blue-500/20 via-pink-500/20 to-purple-500/20">
+                  <div className="flex flex-row justify-center items-center gap-2 text-center p-4 sm:p-5">
+                    <span className="text-white font-semibold text-base sm:text-xl">
+                      Valor Total
+                    </span>
+                    <span className="text-white/60 line-through font-bold text-xl sm:text-3xl">
+                      R$582
+                    </span>
+                  </div>
+                </div>
+
+                {/* Preço promocional + à vista */}
+                <div className="bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 text-center py-5 sm:py-6">
+                  <p className="text-white text-base sm:text-xl mb-1 font-medium">
+                    Mas hoje você paga apenas
+                  </p>
+                  <p className="text-white font-extrabold drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] animate-pulse [animation-duration:3s] text-3xl sm:text-5xl">
+                    <span className="text-base sm:text-2xl align-top mr-1">3x de</span> R$16,77
+                  </p>
+                  <p className="text-white/90 text-sm sm:text-base mt-2 font-semibold">
+                    ou à vista <span className="text-white">R$47</span>
+                  </p>
+                  <p className="text-white/80 text-xs sm:text-sm mt-1">
+                    Acesso completo e imediato ao Treinamento
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Lado direito: conversão e confiança */}
-            <div className="flex flex-col justify-center bg-white/5 rounded-xl p-5 sm:p-6">
-              {/* selo/urgência discreto */}
-           <div className="mb-4 text-center">
-  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium
-    bg-gradient-to-r from-blue-500/40 via-pink-500/40 to-purple-500/40 text-white shadow-[0_0_12px_rgba(255,60,142,0.5)]
-    animate-pulse [animation-duration:3s]">
-    🔥 Oferta com bônus ativa hoje
-  </span>
-</div>
-
-
-
-              {/* CTA */}
-              <Button
-                className="w-full bg-neon-pink hover:bg-neon-pink/80 text-white py-5 sm:py-6 rounded-lg 
-                  shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]
-                  flex items-center justify-center gap-2 text-base sm:text-lg"
+            {/* Botão de compra logo abaixo da box */}
+            <Button
+              className="mt-6 w-full bg-neon-pink hover:bg-neon-pink/80 text-white py-5 sm:py-6 rounded-lg 
+                shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]
+                flex items-center justify-center gap-2 text-base sm:text-lg"
+            >
+              <a 
+                href="https://pay.hotmart.com/M87692618I?off=2bxvy15n" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full h-full flex items-center justify-center gap-2"
               >
-                <a 
-                  href="https://pay.hotmart.com/M87692618I?off=2bxvy15n" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full h-full flex items-center justify-center gap-2"
-                >
-                  <span>Liberar meu conteúdo agora!</span>
-          
-                </a>
-              </Button>
+                <span>Liberar meu conteúdo agora!</span>
+               
+              </a>
+            </Button>
 
-              {/* provas de confiança */}
-              <ul className="mt-6 space-y-2 sm:space-y-3 text-gray-300 text-xs sm:text-sm">
-                <li className="flex items-start gap-2"><Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neon-blue mt-0.5" /> Acesso imediato após a confirmação</li>
-                <li className="flex items-start gap-2"><Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neon-blue mt-0.5" /> Pagamento único e seguro (Hotmart)</li>
-                <li className="flex items-start gap-2"><Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neon-blue mt-0.5" /> Garantia de 7 dias</li>
-                <li className="flex items-start gap-2"><Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neon-blue mt-0.5" /> Suporte completo</li>
-              </ul>
+            {/* provas de confiança (opcional manter) */}
+         
 
-              <div className="mt-5 text-center text-white/60 text-[10px] sm:text-xs">
-                🔒 Ambiente seguro • 💳 Cartão • Pix • Boleto
-              </div>
+            <div className="mt-5 text-center text-white/60 text-[10px] sm:text-xs">
+              🔒 Ambiente seguro • 💳 Cartão • Pix • Boleto
             </div>
           </div>
 
           {/* Rodapé */}
-          <div className="text-center pt-6 border-t border-white/10">
+          <div className="text-center pt-6 border-t border-white/10 mt-10">
             <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed">
               Dúvidas? Entre em contato pelo email <span className="text-neon-cyan">contato@elifatima.com</span>
             </p>

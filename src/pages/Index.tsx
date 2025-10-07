@@ -12,7 +12,9 @@ import CTA from '@/components/CTA';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import { useEffect } from "react";
+import Guarantee from '@/components/Guarantee';
 import ScrollPopup from '../components/ScrollPopup'; // adjust path as needed
+import GuaranteeSection from '@/components/Guarantee';
 
 
 const Index = () => {
@@ -54,6 +56,7 @@ const Index = () => {
       <ProductShowcase />
       <Benefits />
       <CTA />
+       <GuaranteeSection />
       <FAQ />
       <Footer />
     </div>

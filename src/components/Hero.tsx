@@ -55,15 +55,7 @@ const Hero = () => {
         Quero destravar meu conteúdo agora!
       </Button>
 
-      <Button
-        variant="outline"
-        className="w-full sm:w-auto border-neon-blue text-neon-blue py-5 px-6 sm:px-8 rounded-xl 
-          hover:bg-neon-blue/20 shadow-[0_0_10px_rgba(0,153,255,0.3)] transition-all 
-          hover:shadow-[0_0_20px_rgba(0,153,255,0.6)]"
-        onClick={scrollToBenefits}
-      >
-        Saiba Mais
-      </Button>
+     
     </div>
   </div>
   
