@@ -61,7 +61,7 @@ const Navbar = () => {
               Benefícios
             </a>
             <Button className="bg-neon-pink hover:bg-neon-pink/80 text-white w-full">
-              <a href="https://pay.hotmart.com/M87692618I?off=2bxvy15n" className="w-full h-full">
+              <a href="https://pay.hotmart.com/M87692618I?off=2bxvy15n&checkoutMode=10" className="w-full h-full">
                 Comprar Agora
               </a>
             </Button>

@@ -93,7 +93,7 @@ const CTA = () => {
                 flex items-center justify-center gap-2 text-base sm:text-lg"
             >
               <a 
-                href="https://pay.hotmart.com/M87692618I?off=2bxvy15n" 
+                href="https://pay.hotmart.com/M87692618I?off=2bxvy15n&checkoutMode=10" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full h-full flex items-center justify-center gap-2"

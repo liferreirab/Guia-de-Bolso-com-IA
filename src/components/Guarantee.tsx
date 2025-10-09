@@ -64,7 +64,7 @@ const GuaranteeSection = () => {
               {/* CTA secundário */}
               <div className="mt-8 flex justify-center">
                 <a
-                  href="https://pay.hotmart.com/M87692618I?off=2bxvy15n"
+                  href="https://pay.hotmart.com/M87692618I?off=2bxvy15n&checkoutMode=10"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg
