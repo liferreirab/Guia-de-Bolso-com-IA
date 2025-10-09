@@ -36,7 +36,7 @@ const Index = () => {
           url.searchParams.set("utm_medium", utmMedium || "default_medium");
           url.searchParams.set("utm_campaign", utmCampaign || "default_campaign");
           url.searchParams.set("src", utmCampaign || "default_campaign");
-          anchor.href = url.toString();
+          //anchor.href = url.toString();
         } catch (error) {
           console.error("Failed to update fbclid on link", error);
         }
