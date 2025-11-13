@@ -1,8 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 const CTA = () => {
+  // ---------- ESTADO DO POPUP ----------
+  const [isOpen, setIsOpen] = useState(false);
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [ddd, setDdd] = useState("");
+  const [telefone, setTelefone] = useState("");
+
+  // Apenas dígitos no DDD
+  const handleDddChange = (e) => {
+    const value = e.target.value.replace(/\D/g, "").slice(0, 3); // até 3 dígitos
+    setDdd(value);
+  };
+
+  // Máscara automática no telefone: (11) 98888-7777
+  const handleTelefoneChange = (e) => {
+    let value = e.target.value.replace(/\D/g, "").slice(0, 11); // até 11 dígitos
+
+    if (value.length <= 2) {
+      value = value;
+    } else if (value.length <= 7) {
+      value = `${value.slice(0, 5)}${value.slice(5)}`;
+    } else {
+      value = `${value.slice(0, 5)}${value.slice(5, 9)}${value.slice(9)}`;
+    }
+
+    // Exibimos formatado, mas sem DDD aqui (o DDD está em campo próprio)
+    // Deixamos só "99999-9999" visualmente
+    let formatted = e.target.value.replace(/\D/g, "").slice(0, 9);
+    if (formatted.length <= 4) {
+      formatted = formatted;
+    } else {
+      formatted = `${formatted.slice(0, 5)}-${formatted.slice(5)}`;
+    }
+
+    setTelefone(formatted);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const baseUrl = "https://pay.hotmart.com/M87692618I";
+    const params = new URLSearchParams();
+
+    // parâmetros fixos do checkout
+    params.set("off", "2bxvy15n");
+    params.set("checkoutMode", "10");
+
+    // junta DDD + telefone, removendo qualquer caractere não numérico
+    const fullPhone = `${ddd}${telefone}`.replace(/\D/g, "");
+
+    params.set("name", nome);
+    params.set("email", email);
+    params.set("phone", fullPhone);
+
+    const url = `${baseUrl}?${params.toString()}`;
+
+    // abre em nova aba
+    const novaAba = window.open(url, "_blank", "noopener,noreferrer");
+    if (novaAba) {
+      novaAba.opener = null;
+    }
+  };
+
   return (
     <div id="cta" className="py-16 md:py-24 w-full bg-neon-black relative overflow-hidden">
       {/* Background effect */}
@@ -16,7 +79,7 @@ const CTA = () => {
           
           {/* Header */}
           <div className="text-center mb-8 md:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:4xl font-bold mb-4 leading-tight">
               <span className="text-neon-blue">Pronta Para Transformar Sua </span><br className="hidden sm:block" />
               <span className="text-white">Criação de Conteúdo?</span>
             </h2>
@@ -56,7 +119,7 @@ const CTA = () => {
                   </div>
                 ))}
 
-                {/* Linha total (riscar e deixar apagado) */}
+                {/* Linha total */}
                 <div className="bg-gradient-to-r from-blue-500/20 via-pink-500/20 to-purple-500/20">
                   <div className="flex flex-row justify-center items-center gap-2 text-center p-4 sm:p-5">
                     <span className="text-white font-semibold text-base sm:text-xl">
@@ -86,25 +149,16 @@ const CTA = () => {
               </div>
             </div>
 
-            {/* Botão de compra logo abaixo da box */}
+            {/* Botão de compra agora abre o POPUP */}
             <Button
+              type="button"
+              onClick={() => setIsOpen(true)}
               className="mt-6 w-full bg-neon-pink hover:bg-neon-pink/80 text-white py-5 sm:py-6 rounded-lg 
                 shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]
                 flex items-center justify-center gap-2 text-base sm:text-lg"
             >
-              <a 
-                href="https://pay.hotmart.com/M87692618I?off=2bxvy15n&checkoutMode=10" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full h-full flex items-center justify-center gap-2"
-              >
-                <span>Liberar meu conteúdo agora!</span>
-               
-              </a>
+              <span>Liberar meu conteúdo agora!</span>
             </Button>
-
-            {/* provas de confiança (opcional manter) */}
-         
 
             <div className="mt-5 text-center text-white/60 text-[10px] sm:text-xs">
               🔒 Ambiente seguro • 💳 Cartão • Pix • Boleto
@@ -119,6 +173,106 @@ const CTA = () => {
           </div>
         </div>
       </div>
+
+      {/* POPUP DO CHECKOUT - ESTILO NEON + NÃO FECHA AO CLICAR FORA */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]"
+          // não fechamos ao clicar no overlay
+        >
+          <div
+            className="relative w-full max-w-md mx-4 rounded-2xl border border-white/10 bg-gradient-to-br from-neon-black via-slate-900 to-black p-[1px] shadow-[0_0_40px_rgba(0,200,255,0.35)]"
+          >
+            <div className="rounded-2xl bg-slate-950/95 p-6 sm:p-7">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                Antes de continuar
+              </h2>
+              <p className="text-sm text-slate-200 mb-4">
+                Preencha seus dados para ir para o checkout.
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                    Nome completo
+                  </label>
+                  <input
+                    type="text"
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                    required
+                    className="w-full rounded-lg border border-slate-600 bg-slate-900/80 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-neon-pink"
+                    placeholder="Digite seu nome"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                    E-mail
+                  </label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full rounded-lg border border-slate-600 bg-slate-900/80 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-neon-pink"
+                    placeholder="seuemail@exemplo.com"
+                  />
+                </div>
+
+                <div className="flex gap-3">
+                  <div className="w-20">
+                    <label className="block text-xs font-medium text-slate-300 mb-1">
+                      DDD
+                    </label>
+                    <input
+                      type="text"
+                      value={ddd}
+                      onChange={handleDddChange}
+                      required
+                      className="w-full rounded-lg border border-slate-600 bg-slate-900/80 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-neon-pink"
+                      placeholder="11"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <label className="block text-xs font-medium text-slate-300 mb-1">
+                      Telefone
+                    </label>
+                    <input
+                      type="text"
+                      value={telefone}
+                      onChange={handleTelefoneChange}
+                      required
+                      className="w-full rounded-lg border border-slate-600 bg-slate-900/80 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-neon-pink"
+                      placeholder="98888-7777"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex gap-3 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(false)}
+                    className="flex-1 rounded-lg border border-slate-500 bg-slate-800/60 px-4 py-2 text-sm font-medium text-slate-100 hover:bg-slate-700/80 transition-colors"
+                  >
+                    Voltar
+                  </button>
+                  <button
+                    type="submit"
+                    className="flex-1 rounded-lg bg-neon-pink px-4 py-2 text-sm font-semibold text-white shadow-[0_0_18px_rgba(255,60,142,0.8)] hover:bg-neon-pink/90 transition-colors"
+                  >
+                    Ir para o checkout
+                  </button>
+                </div>
+
+                <p className="mt-2 text-[10px] text-center text-slate-400">
+                  Seus dados são usados apenas para o acesso ao curso.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
