@@ -27,10 +27,13 @@ const CTA = () => {
 
     // junta código do país + telefone (com DDD dentro do campo telefone)
     const fullPhone = `${countryCode}${telefone}`.replace(/\D/g, "");
+    const ddd = fullPhone.slice(0, 2);
+    const phone = fullPhone.slice(2);
 
     params.set("name", nome);
     params.set("email", email);
-    params.set("phone", fullPhone);
+    params.set("phoneac", ddd);
+    params.set("phonenumber", phone);
 
     const url = `${baseUrl}?${params.toString()}`;
 
@@ -38,6 +41,12 @@ const CTA = () => {
     const searchParams = new URLSearchParams(window.location.search);
     const utmSource = searchParams.get("utm_source") || "";
     const utmCampaign = searchParams.get("utm_campaign") || "";
+
+// 2) Abrir checkout em nova aba
+    const novaAba = window.open(url, "_blank", "noopener,noreferrer");
+    if (novaAba) {
+      novaAba.opener = null;
+    }
 
     // 1) Enviar dados para a planilha (Apps Script)
     try {
@@ -65,11 +74,7 @@ const CTA = () => {
       console.error("Erro ao enviar lead para a planilha:", err);
     }
 
-    // 2) Abrir checkout em nova aba
-    const novaAba = window.open(url, "_blank", "noopener,noreferrer");
-    if (novaAba) {
-      novaAba.opener = null;
-    }
+    
   };
 
   return (
