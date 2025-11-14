@@ -27,8 +27,8 @@ const CTA = () => {
 
     // junta código do país + telefone (com DDD dentro do campo telefone)
     const fullPhone = `${countryCode}${telefone}`.replace(/\D/g, "");
-    const ddd = fullPhone.slice(0, 2);
-    const phone = fullPhone.slice(2);
+    const ddd = telefone.slice(0, 2);
+    const phone = telefone.slice(2);
 
     params.set("name", nome);
     params.set("email", email);
