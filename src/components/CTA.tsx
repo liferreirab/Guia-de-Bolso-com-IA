@@ -274,7 +274,7 @@ const CTA = () => {
                     type="submit"
                     className="flex-1 rounded-lg bg-neon-pink px-4 py-2 text-sm font-semibold text-white shadow-[0_0_18px_rgba(255,60,142,0.8)] hover:bg-neon-pink/90 transition-colors"
                   >
-                    Finalizar meu pedido
+                    Ir para o checkout
                   </button>
                 </div>
 
