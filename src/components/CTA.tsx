@@ -1,46 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Check } from 'lucide-react';
+import { Check } from "lucide-react";
 
 const CTA = () => {
   // ---------- ESTADO DO POPUP ----------
   const [isOpen, setIsOpen] = useState(false);
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
-  const [ddd, setDdd] = useState("");
+  const [countryCode, setCountryCode] = useState("55"); // padrão Brasil
   const [telefone, setTelefone] = useState("");
 
-  // Apenas dígitos no DDD
-  const handleDddChange = (e) => {
-    const value = e.target.value.replace(/\D/g, "").slice(0, 3); // até 3 dígitos
-    setDdd(value);
-  };
-
-  // Máscara automática no telefone: (11) 98888-7777
   const handleTelefoneChange = (e) => {
-    let value = e.target.value.replace(/\D/g, "").slice(0, 11); // até 11 dígitos
-
-    if (value.length <= 2) {
-      value = value;
-    } else if (value.length <= 7) {
-      value = `${value.slice(0, 5)}${value.slice(5)}`;
-    } else {
-      value = `${value.slice(0, 5)}${value.slice(5, 9)}${value.slice(9)}`;
-    }
-
-    // Exibimos formatado, mas sem DDD aqui (o DDD está em campo próprio)
-    // Deixamos só "99999-9999" visualmente
-    let formatted = e.target.value.replace(/\D/g, "").slice(0, 9);
-    if (formatted.length <= 4) {
-      formatted = formatted;
-    } else {
-      formatted = `${formatted.slice(0, 5)}-${formatted.slice(5)}`;
-    }
-
-    setTelefone(formatted);
+    // deixa a pessoa digitar livremente (com DDD, traços etc.)
+    setTelefone(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const baseUrl = "https://pay.hotmart.com/M87692618I";
@@ -50,8 +25,8 @@ const CTA = () => {
     params.set("off", "2bxvy15n");
     params.set("checkoutMode", "10");
 
-    // junta DDD + telefone, removendo qualquer caractere não numérico
-    const fullPhone = `${ddd}${telefone}`.replace(/\D/g, "");
+    // junta código do país + telefone (com DDD dentro do campo telefone)
+    const fullPhone = `${countryCode}${telefone}`.replace(/\D/g, "");
 
     params.set("name", nome);
     params.set("email", email);
@@ -59,7 +34,38 @@ const CTA = () => {
 
     const url = `${baseUrl}?${params.toString()}`;
 
-    // abre em nova aba
+    // UTM da URL (se houver)
+    const searchParams = new URLSearchParams(window.location.search);
+    const utmSource = searchParams.get("utm_source") || "";
+    const utmCampaign = searchParams.get("utm_campaign") || "";
+
+    // 1) Enviar dados para a planilha (Apps Script)
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbwlHU8ZsZ80WZ-vMC2ATi7hK9xXd0kFpS_wiau2cVLEMdWnkOXScazD9NBM1bAUHok/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // mandamos tudo que interessa para a planilha
+          body: JSON.stringify({
+            nome,
+            email,
+            countryCode,
+            telefone,
+            fullPhone,
+            utmSource,
+            utmCampaign,
+          }),
+          mode: "no-cors", // evita erro de CORS no navegador
+        }
+      );
+    } catch (err) {
+      console.error("Erro ao enviar lead para a planilha:", err);
+    }
+
+    // 2) Abrir checkout em nova aba
     const novaAba = window.open(url, "_blank", "noopener,noreferrer");
     if (novaAba) {
       novaAba.opener = null;
@@ -67,29 +73,34 @@ const CTA = () => {
   };
 
   return (
-    <div id="cta" className="py-16 md:py-24 w-full bg-neon-black relative overflow-hidden">
+    <div
+      id="cta"
+      className="py-16 md:py-24 w-full bg-neon-black relative overflow-hidden"
+    >
       {/* Background effect */}
       <div className="absolute inset-0">
         <div className="absolute -top-64 -right-64 w-80 h-80 md:w-96 md:h-96 rounded-full bg-neon-pink/20 blur-3xl"></div>
         <div className="absolute -bottom-64 -left-64 w-80 h-80 md:w-96 md:h-96 rounded-full bg-neon-blue/20 blur-3xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto glass-card p-6 sm:p-8 md:p-12 rounded-2xl border border-white/10 shadow-[0_0_20px_rgba(0,153,255,0.2)]">
-          
           {/* Header */}
           <div className="text-center mb-8 md:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:4xl font-bold mb-4 leading-tight">
-              <span className="text-neon-blue">Pronta Para Transformar Sua </span><br className="hidden sm:block" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+              <span className="text-neon-blue">Pronta Para Transformar Sua </span>
+              <br className="hidden sm:block" />
               <span className="text-white">Criação de Conteúdo?</span>
             </h2>
             <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-              O Curso <span className="text-white font-semibold">IA para Redes Sociais</span> vai direto ao ponto e entrega tudo que você precisa 
-              para usar a Inteligência Artificial a seu favor e multiplicar seus resultados.
+              O Curso{" "}
+              <span className="text-white font-semibold">IA para Redes Sociais</span>{" "}
+              vai direto ao ponto e entrega tudo que você precisa para usar a
+              Inteligência Artificial a seu favor e multiplicar seus resultados.
             </p>
           </div>
-          
-          {/* Box única centralizada (mantendo a ancoragem) */}
+
+          {/* Box única centralizada */}
           <div className="max-w-xl mx-auto">
             <h3 className="text-neon-pink font-bold text-lg sm:text-xl mb-4 sm:mb-6 text-center">
               O Que Você Recebe:
@@ -98,12 +109,15 @@ const CTA = () => {
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
               <div className="divide-y divide-white/10">
                 {[
-                  { name: 'Aulas gravadas e práticas', price: 'R$197' },
-                  { name: 'Modelos de prompts prontos', price: 'R$97' },
-                  { name: 'Checklist e briefing prático', price: 'R$97' },
-                  { name: 'Acesso às atualizações', price: 'R$97' },
-                  { name: 'Suporte', price: 'R$47' },
-                  { name: 'Bônus: Template de Calendário Editorial Notion', price: 'R$47' },
+                  { name: "Aulas gravadas e práticas", price: "R$197" },
+                  { name: "Modelos de prompts prontos", price: "R$97" },
+                  { name: "Checklist e briefing prático", price: "R$97" },
+                  { name: "Acesso às atualizações", price: "R$97" },
+                  { name: "Suporte", price: "R$47" },
+                  {
+                    name: "Bônus: Template de Calendário Editorial Notion",
+                    price: "R$47",
+                  },
                 ].map((item, index) => (
                   <div
                     key={index}
@@ -111,7 +125,9 @@ const CTA = () => {
                   >
                     <div className="flex items-start gap-2 sm:gap-3">
                       <Check className="w-4 h-4 sm:w-5 sm:h-5 text-neon-blue flex-shrink-0" />
-                      <span className="text-gray-200 text-sm sm:text-base">{item.name}</span>
+                      <span className="text-gray-200 text-sm sm:text-base">
+                        {item.name}
+                      </span>
                     </div>
                     <span className="text-gray-400 line-through text-sm sm:text-lg mt-1 sm:mt-0">
                       {item.price}
@@ -137,7 +153,10 @@ const CTA = () => {
                     Mas hoje você paga apenas
                   </p>
                   <p className="text-white font-extrabold drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] animate-pulse [animation-duration:3s] text-3xl sm:text-5xl">
-                    <span className="text-base sm:text-2xl align-top mr-1">3x de</span> R$16,77
+                    <span className="text-base sm:text-2xl align-top mr-1">
+                      3x de
+                    </span>{" "}
+                    R$16,77
                   </p>
                   <p className="text-white/90 text-sm sm:text-base mt-2 font-semibold">
                     ou à vista <span className="text-white">R$47</span>
@@ -149,13 +168,11 @@ const CTA = () => {
               </div>
             </div>
 
-            {/* Botão de compra agora abre o POPUP */}
+            {/* Botão de compra abre o POPUP */}
             <Button
               type="button"
               onClick={() => setIsOpen(true)}
-              className="mt-6 w-full bg-neon-pink hover:bg-neon-pink/80 text-white py-5 sm:py-6 rounded-lg 
-                shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)]
-                flex items-center justify-center gap-2 text-base sm:text-lg"
+              className="mt-6 w-full bg-neon-pink hover:bg-neon-pink/80 text-white py-5 sm:py-6 rounded-lg shadow-[0_0_15px_rgba(255,60,142,0.5)] transition-all hover:shadow-[0_0_25px_rgba(255,60,142,0.8)] flex items-center justify-center gap-2 text-base sm:text-lg"
             >
               <span>Liberar meu conteúdo agora!</span>
             </Button>
@@ -168,27 +185,23 @@ const CTA = () => {
           {/* Rodapé */}
           <div className="text-center pt-6 border-t border-white/10 mt-10">
             <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed">
-              Dúvidas? Entre em contato pelo email <span className="text-neon-cyan">contato@elifatima.com</span>
+              Dúvidas? Entre em contato pelo email{" "}
+              <span className="text-neon-cyan">contato@elifatima.com</span>
             </p>
           </div>
         </div>
       </div>
 
-      {/* POPUP DO CHECKOUT - ESTILO NEON + NÃO FECHA AO CLICAR FORA */}
+      {/* POPUP DO CHECKOUT */}
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]"
-          // não fechamos ao clicar no overlay
-        >
-          <div
-            className="relative w-full max-w-md mx-4 rounded-2xl border border-white/10 bg-gradient-to-br from-neon-black via-slate-900 to-black p-[1px] shadow-[0_0_40px_rgba(0,200,255,0.35)]"
-          >
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]">
+          <div className="relative w-full max-w-md mx-4 rounded-2xl border border-white/10 bg-gradient-to-br from-neon-black via-slate-900 to-black p-[1px] shadow-[0_0_40px_rgba(0,200,255,0.35)]">
             <div className="rounded-2xl bg-slate-950/95 p-6 sm:p-7">
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                Antes de continuar
+                Você está prestes a liberar seu acesso exclusivo! 
               </h2>
               <p className="text-sm text-slate-200 mb-4">
-                Preencha seus dados para ir para o checkout.
+                Preencha seus dados para continuar:
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -220,23 +233,23 @@ const CTA = () => {
                   />
                 </div>
 
+                {/* Código do país + telefone (com DDD dentro) */}
                 <div className="flex gap-3">
-                  <div className="w-20">
+                  <div className="w-28">
                     <label className="block text-xs font-medium text-slate-300 mb-1">
-                      DDD
+                      Código do país
                     </label>
                     <input
                       type="text"
-                      value={ddd}
-                      onChange={handleDddChange}
-                      required
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
                       className="w-full rounded-lg border border-slate-600 bg-slate-900/80 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-neon-pink"
-                      placeholder="11"
+                      placeholder="55"
                     />
                   </div>
                   <div className="flex-1">
                     <label className="block text-xs font-medium text-slate-300 mb-1">
-                      Telefone
+                      Telefone (com DDD)
                     </label>
                     <input
                       type="text"
@@ -244,7 +257,7 @@ const CTA = () => {
                       onChange={handleTelefoneChange}
                       required
                       className="w-full rounded-lg border border-slate-600 bg-slate-900/80 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-neon-pink"
-                      placeholder="98888-7777"
+                      placeholder="1198888-7777"
                     />
                   </div>
                 </div>
@@ -261,7 +274,7 @@ const CTA = () => {
                     type="submit"
                     className="flex-1 rounded-lg bg-neon-pink px-4 py-2 text-sm font-semibold text-white shadow-[0_0_18px_rgba(255,60,142,0.8)] hover:bg-neon-pink/90 transition-colors"
                   >
-                    Ir para o checkout
+                    Finalizar meu pedido
                   </button>
                 </div>
 
