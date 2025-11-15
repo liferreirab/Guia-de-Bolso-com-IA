@@ -11,6 +11,8 @@ import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import GuaranteeSection from "@/components/Guarantee";
+import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
+
 // Caso você já esteja usando ScrollPopup, pode manter. Se não usa, remova:
 // import ScrollPopup from "../components/ScrollPopup";
 
@@ -62,6 +64,7 @@ const Index = () => {
       <GuaranteeSection />
       <FAQ />
       <Footer />
+      <FloatingWhatsAppButton />
     </div>
   );
 };
