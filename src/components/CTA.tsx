@@ -9,6 +9,8 @@ const CTA = () => {
   const [email, setEmail] = useState("");
   const [countryCode, setCountryCode] = useState("55"); // padrão Brasil
   const [telefone, setTelefone] = useState("");
+  const [consent, setConsent] = useState(true);
+
 
   const handleTelefoneChange = (e) => {
     // deixa a pessoa digitar livremente (com DDD, traços etc.)
@@ -265,6 +267,24 @@ const CTA = () => {
                       placeholder="1198888-7777"
                     />
                   </div>
+                </div>
+
+                 {/* Box de consentimento */}
+                <div className="mt-1 rounded-lg border border-slate-700/80 bg-slate-900/60 px-3 py-2 flex items-start gap-2">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    className="mt-[2px] h-4 w-4 rounded border-slate-500 bg-slate-900 text-neon-pink focus:ring-neon-pink focus:outline-none"
+                  />
+                  <label
+                    htmlFor="consent"
+                    className="text-[11px] leading-snug text-slate-200"
+                  >
+                    Autorizo o envio de mensagens e e mails sobre este e outros conteúdos.
+                    Sei que posso cancelar quando quiser.
+                  </label>
                 </div>
 
                 <div className="flex gap-3 pt-2">
