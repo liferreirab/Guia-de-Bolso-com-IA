@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const FloatingWhatsAppButton = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+
+      if (scrolled >= 20) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const whatsappNumber = "17784031396";
   const message = encodeURIComponent(
     "Oi! Tenho uma dúvida sobre o curso IA para Redes Sociais."
@@ -11,6 +30,8 @@ const FloatingWhatsAppButton = () => {
     const win = window.open(url, "_blank", "noopener,noreferrer");
     if (win) win.opener = null;
   };
+
+  if (!showButton) return null;
 
   return (
     <div
@@ -33,11 +54,10 @@ const FloatingWhatsAppButton = () => {
           border: "none",
           cursor: "pointer",
           backgroundImage:
-            "linear-gradient(135deg, #ec4899, #8b5cf6)", // rosa/roxo neon
+            "linear-gradient(135deg, #ec4899, #8b5cf6)",
           boxShadow: "0 0 22px rgba(236, 72, 153, 0.7)",
         }}
       >
-        {/* bolinha estilo WhatsApp */}
         <div
           style={{
             width: "32px",
@@ -54,7 +74,6 @@ const FloatingWhatsAppButton = () => {
           <span style={{ fontSize: "18px" }}>💬</span>
         </div>
 
-        {/* textos */}
         <div
           style={{
             display: "flex",
