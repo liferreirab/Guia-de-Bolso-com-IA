@@ -27,21 +27,22 @@ const Hero = () => {
     min-h-[80vh] lg:min-h-screen py-12 px-6 sm:px-8 md:px-10 lg:px-16"
 >
   <div className="flex flex-col w-full lg:w-1/2 xl:w-3/5 mb-12 lg:mb-0 lg:pl-10 text-center lg:text-left">
-    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-      <span className="text-white block">
-        Crie conteúdos estratégicos que geram mais engajamento, mais clientes e mais faturamento.
-      </span>
-      <span className="text-neon-pink text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 block">
-        Pare de desperdiçar horas tentando adivinhar o que postar.
-      </span>
-    </h1>
+    <h1 className="font-bold mb-6 leading-tight">
+  <span className="text-neon-pink  block text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+    Para Social Medias que valorizam seu tempo:
+  </span>
 
-    <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 leading-relaxed max-w-xl sm:max-w-2xl mx-auto lg:mx-0">
-      Aprenda o método que usa Inteligência Artificial para planejar 
-      <span className="bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 bg-clip-text text-transparent font-semibold">
-        {' '}30 dias de conteúdo estratégico em menos de 1 hora
-      </span>, atrair clientes certos e transformar redes sociais em uma fonte previsível de lucro.
-    </p>
+  <span className="text-white block mt-4 
+    text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+    font-extrabold">
+    Crie uma Linha Editorial completa + Calendário de Posts estratégicos em apenas 1 hora.
+  </span>
+</h1>
+
+<p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 leading-relaxed max-w-xl sm:max-w-2xl mx-auto lg:mx-0">
+  Domine a Inteligência Artificial, ganhe velocidade e impressione seus clientes.
+</p>
+
 
     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
       <Button
