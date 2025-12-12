@@ -21,44 +21,50 @@ const Hero = () => {
         </div>
       </div>
 
-     {/* Conteúdo */}
+{/* Conteúdo */}
 <div
   className="container relative z-10 flex flex-col lg:flex-row items-center justify-between 
     min-h-[80vh] lg:min-h-screen py-12 px-6 sm:px-8 md:px-10 lg:px-16"
 >
-  <div className="flex flex-col w-full lg:w-1/2 xl:w-3/5 mb-12 lg:mb-0 lg:pl-10 text-center lg:text-left">
-    <h1 className="font-bold mb-6 leading-tight">
-  <span className="text-neon-pink  block text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-    Para Social Medias que valorizam seu tempo:
-  </span>
+  <div className="flex flex-col w-full lg:w-3/4 xl:w-4/5 mb-12 lg:mb-0 lg:pl-0 text-center lg:text-left">
+    
+    <h1 className="font-bold mb-8 leading-tight">
+      {/* 1. Pré-headline ajustada: Menor, Uppercase e com espaçamento para elegância */}
+      <span className="text-neon-pink font-extrabold tracking-wide uppercase block text-sm sm:text-base md:text-xl mb-4">
+        Para Social Medias que valorizam seu tempo:
+      </span>
 
-  <span className="text-white block mt-4 
-    text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
-    font-extrabold">
-    Crie uma Linha Editorial completa + Calendário de Posts estratégicos em apenas 1 hora.
-  </span>
-</h1>
+      {/* 2. Headline Principal: Maior contraste e destaque no benefício */}
+      <span className="text-white block text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+        Crie uma Linha Editorial completa + Calendário de Posts estratégicos{' '}
+        {/* Gradiente aplicado apenas na promessa final */}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-neon-pink">
+          em apenas 1 hora.
+        </span>
+      </span>
+    </h1>
 
-<p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 leading-relaxed max-w-xl sm:max-w-2xl mx-auto lg:mx-0">
-  Domine a Inteligência Artificial, ganhe velocidade e impressione seus clientes.
-</p>
-
+    <p className="text-gray-300 text-base sm:text-xl md:text-2xl mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+      Domine a Inteligência Artificial, ganhe velocidade e impressione seus clientes.
+    </p>
 
     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+      {/* 3. Botão com texto maior e mais destaque */}
       <Button
         className="w-full sm:w-auto text-center whitespace-normal break-words 
-          bg-neon-pink hover:bg-neon-pink/80 text-white text-sm sm:text-base font-bold 
-          py-5 px-6 sm:px-10 rounded-2xl shadow-[0_0_20px_rgba(255,60,142,0.6)] 
-          hover:shadow-[0_0_30px_rgba(255,60,142,0.9)] transition-transform duration-300 
-          transform hover:scale-105 animate-pulse [animation-duration:3s]"
+          bg-neon-pink hover:bg-neon-pink/80 text-white text-lg sm:text-xl font-bold 
+          py-6 px-8 sm:px-12 rounded-2xl 
+          shadow-[0_0_25px_rgba(255,60,142,0.5)] 
+          hover:shadow-[0_0_40px_rgba(255,60,142,0.8)] 
+          transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 
+          animate-pulse [animation-duration:3s]"
         onClick={scrollToCTA}
       >
-        Quero destravar meu conteúdo agora!
+        Quero destravar agora!
       </Button>
-
-     
     </div>
   </div>
+  
   
         {/* Imagem otimizada com preloading e formatos modernos */}
         <div className="relative max-w-md w-full animate-float">
