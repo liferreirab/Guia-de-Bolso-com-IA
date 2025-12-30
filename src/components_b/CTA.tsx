@@ -163,10 +163,10 @@ const CTA = () => {
                     <span className="text-base sm:text-2xl align-top mr-1">
                       3x de
                     </span>{" "}
-                    R$16,77
+                    R$34,62
                   </p>
                   <p className="text-white/90 text-sm sm:text-base mt-2 font-semibold">
-                    ou à vista <span className="text-white">R$47</span>
+                    ou à vista <span className="text-white">R$97</span>
                   </p>
                   <p className="text-white/80 text-xs sm:text-sm mt-1">
                     Acesso completo e imediato ao Treinamento
